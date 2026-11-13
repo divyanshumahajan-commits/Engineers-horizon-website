@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>EH Sky Tower, Bavdhan — 3 &amp; 4 BHK | Engineers Horizon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./eh-motion.js"></script>
+<script src="./eh-maps.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBF5EC;color:#3A2A20;-webkit-font-smoothing:antialiased}
+a{color:#3A2A20}
+a:hover{color:#A8643F}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="font-family:'Plus Jakarta Sans',sans-serif;color:#3A2A20;background:#FBF5EC;overflow-x:hidden;">
+
+<section data-screen-label="Sky Tower · Hero" style="position:relative;height:max(100vh,640px);overflow:hidden;background:#C7A98A;">
+  <div style="position:absolute;inset:0;"><img data-reveal="zoom" data-load="" src="assets/skytower-hero.jpg" alt="EH Sky Tower" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,31,24,.28) 0%,rgba(43,31,24,.05) 24%,rgba(43,31,24,.16) 40%,rgba(43,31,24,.66) 100%);pointer-events:none;"></div>
+  <dc-import name="SiteHeader" variant="overlay" active="PROJECTS" hint-size="100%,76px"></dc-import>
+  <div data-reveal="rise-lg" data-load="" style="position:absolute;left:0;right:0;top:clamp(100px,13vh,130px);text-align:center;pointer-events:none;">
+    <div style="font-weight:800;font-size:clamp(48px,13vw,240px);line-height:.8;letter-spacing:-.05em;color:#fff;white-space:nowrap;">SKY TOWER</div>
+  </div>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+  <img data-reveal="zoom" data-load="" src="assets/skytower-hero-cutout.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;z-index:2;pointer-events:none;">
+  </sc-if>
+  <div style="position:absolute;left:clamp(18px,3.5vw,56px);right:clamp(18px,3.5vw,56px);bottom:clamp(28px,5vh,48px);z-index:3;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;">
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <img data-reveal="rise" data-load="" data-delay="200" src="assets/skytower-logo-light.png" alt="EH Sky Tower" style="width:110px;height:auto;display:block;">
+      <h1 data-reveal="rise" data-load="" data-delay="300" style="margin:0;font-weight:800;font-size:clamp(32px,4vw,60px);line-height:.92;letter-spacing:-.03em;color:#fff;text-transform:uppercase;">Live above<br>Bavdhan.</h1>
+      <div data-reveal="rise" data-load="" data-delay="450" style="display:flex;flex-wrap:wrap;gap:10px;">
+        <a href="#enquire" style="display:flex;height:46px;background:#fff;color:#3A2A20;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#3A2A20;color:#fff;"><span style="display:flex;align-items:center;padding:0 20px;">BOOK A SITE VISIT</span><span style="display:flex;align-items:center;padding:0 15px;border-left:1px solid rgba(58,42,32,.2);">»</span></a>
+        <a href="assets/brochure-eh-sky-tower.pdf" target="_blank" style="display:flex;align-items:center;height:46px;padding:0 20px;border:1px solid #fff;color:#fff;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">DOWNLOAD BROCHURE ↓</a>
+      </div>
+    </div>
+    <p data-reveal="fade" data-load="" data-delay="700" style="margin:0;max-width:320px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;line-height:1.6;letter-spacing:.06em;color:#fff;text-transform:uppercase;">105 residences · 21 storeys · 3 &amp; 4 BHK · nearly an acre in Bavdhan.</p>
+  </div>
+</section>
+
+<section data-screen-label="Sky Tower · Key facts" style="border-bottom:1px solid rgba(58,42,32,.16);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(50%,190px),1fr));">
+    <sc-for list="{{ facts }}" as="f" hint-placeholder-count="6">
+      <div style="padding:26px clamp(18px,2vw,28px);border-right:1px solid rgba(58,42,32,.16);border-top:1px solid rgba(58,42,32,.16);display:flex;flex-direction:column;gap:10px;">
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">{{ f.k }}</span>
+        <span style="font-weight:700;font-size:19px;letter-spacing:-.02em;line-height:1.15;">{{ f.v }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Sky Tower · Overview" style="padding:clamp(64px,9vw,130px) clamp(18px,3.5vw,56px);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div data-reveal="rise" style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>OVERVIEW</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(34px,4vw,58px);line-height:.98;letter-spacing:-.03em;">On top of<br>the world.</h2>
+      <p data-reveal="rise" style="margin:0;font-size:clamp(18px,1.5vw,21px);line-height:1.5;text-wrap:pretty;">EH Sky Tower is Bavdhan's new luxury landmark — a single 21-storey tower on nearly an acre of land, with just 105 spacious 3 and 4 BHK homes. Low density means more light, more privacy and panoramic views from every floor.</p>
+      <p data-reveal="rise" style="margin:0;font-size:16px;line-height:1.6;color:#6B5546;text-wrap:pretty;">Curated rooftop amenities, a full clubhouse at ground level and excellent connectivity to Kothrud, Baner and the Mumbai–Pune Expressway.</p>
+    </div>
+    <div data-reveal="zoom" style="aspect-ratio:4/5;position:relative;"><img src="assets/bedroom-master.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+  </div>
+</section>
+
+<section id="plans" data-screen-label="Sky Tower · Floor plans" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);background:#F3E9DA;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;border-bottom:1px solid rgba(58,42,32,.16);">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>FLOOR PLANS</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">Pick your layout</h2>
+    </div>
+    <div style="display:flex;border:1px solid #3A2A20;">
+      <sc-for list="{{ planTabs }}" as="t" hint-placeholder-count="2">
+        <button onClick="{{ t.select }}" style="height:46px;padding:0 22px;border:0;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;background:{{ t.bg }};color:{{ t.fg }};">{{ t.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,64px);padding-top:40px;">
+    <div style="aspect-ratio:4/3;position:relative;background:#FBF5EC;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:clamp(24px,3vw,40px);border:1px solid rgba(58,42,32,.16);overflow:hidden;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">UNIT PLAN · {{ plan.name }}</span>
+      <div style="font-weight:800;font-size:clamp(80px,12vw,190px);letter-spacing:-.06em;line-height:.8;color:#E6D6BF;">{{ plan.name }}</div>
+      <div style="display:flex;flex-direction:column;gap:14px;max-width:420px;">
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#6B5546;">Dimensioned unit plans, room sizes and area statements are inside the project brochure.</p>
+        <a href="assets/brochure-eh-sky-tower.pdf" target="_blank" style="align-self:flex-start;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-decoration:none;border-bottom:1px solid #3A2A20;padding-bottom:4px;">VIEW {{ plan.name }} PLANS IN BROCHURE ↓</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div style="font-weight:700;font-size:clamp(48px,6vw,88px);letter-spacing:-.05em;line-height:.9;">{{ plan.name }}</div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ plan.rows }}" as="r" hint-placeholder-count="5">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.16);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;color:#6B5546;">{{ r.k }}</span>
+            <span style="font-weight:600;font-size:16px;text-align:right;">{{ r.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <a href="#enquire" style="display:flex;align-items:center;height:46px;padding:0 20px;background:#3A2A20;color:#FBF5EC;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#A8643F;color:#FBF5EC;">{{ plan.cta }}</a>
+        <a href="assets/brochure-eh-sky-tower.pdf" target="_blank" style="display:flex;align-items:center;height:46px;padding:0 20px;border:1px solid #3A2A20;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">DOWNLOAD PLAN ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="amenities" data-screen-label="Sky Tower · Amenities" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>AMENITIES</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">Everyday, made easy</h2>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(50%,240px),1fr));border-top:1px solid rgba(58,42,32,.2);border-left:1px solid rgba(58,42,32,.2);">
+    <sc-for list="{{ amenities }}" as="a" hint-placeholder-count="8">
+      <div style="padding:clamp(16px,4vw,26px) clamp(14px,3.6vw,24px);border-right:1px solid rgba(58,42,32,.2);border-bottom:1px solid rgba(58,42,32,.2);display:flex;flex-direction:column;gap:clamp(12px,3vw,30px);min-height:clamp(108px,26vw,150px);">
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#A8643F;">{{ a.n }}</span>
+        <span style="margin-top:auto;font-weight:700;font-size:clamp(16px,4.2vw,20px);letter-spacing:-.02em;line-height:1.15;">{{ a.t }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Sky Tower · Specifications" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);background:#F3E9DA;">
+  <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>SPECIFICATIONS</div>
+  <h2 data-reveal="rise" style="margin:20px 0 40px;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">What goes into your home</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0 32px;border-top:1px solid rgba(58,42,32,.2);">
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">FLOORING</span><span style="font-size:16px;line-height:1.5;">800 × 1600 mm GVT tiles in living, dining, kitchen and bedrooms</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">SANITARY & CP FITTINGS</span><span style="font-size:16px;line-height:1.5;">Kohler wash basins, wall-hung WCs and CP fittings</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">MAIN DOOR</span><span style="font-size:16px;line-height:1.5;">Laminate finish with Yale digital lock</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">WINDOWS</span><span style="font-size:16px;line-height:1.5;">3-track anodised aluminium sliders with mosquito mesh</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">SAFETY</span><span style="font-size:16px;line-height:1.5;">Video door phone, gas detector and panic switch</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">LIFTS</span><span style="font-size:16px;line-height:1.5;">Schindler / Kone or equivalent</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">ELECTRICAL</span><span style="font-size:16px;line-height:1.5;">Polycab cables, Schneider fittings</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">RAILINGS</span><span style="font-size:16px;line-height:1.5;">900 mm SS railing, Jindal or equivalent</span></div>
+  </div>
+</section>
+
+<section data-screen-label="Sky Tower · Gallery" style="padding:0 clamp(18px,3.5vw,56px) clamp(56px,8vw,120px);">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;margin-bottom:36px;padding-top:40px;border-top:1px solid rgba(58,42,32,.16);">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>INSIDE AN EH HOME</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">Lifestyle gallery</h2>
+    </div>
+    <p style="margin:0;max-width:420px;font-size:14px;line-height:1.6;color:#6B5546;">Interiors from our furnished sample flat. Representative of the finish quality — furniture and décor are not part of the offering.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;">
+    <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#E6D6BF;grid-column:1/-1;max-height:72vh;">
+      <sc-for list="{{ gal }}" as="g" hint-placeholder-count="1">
+        <img src="{{ g.src }}" alt="{{ g.caption }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ g.bigOp }};transition:opacity .9s ease;">
+      </sc-for>
+      <div style="position:absolute;left:0;bottom:0;background:#FBF5EC;padding:12px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;">{{ galCaption }}</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:12px;">
+    <sc-for list="{{ gal }}" as="g" hint-placeholder-count="5">
+      <button onMouseEnter="{{ g.pick }}" onClick="{{ g.pick }}" style="padding:0;border:0;cursor:pointer;aspect-ratio:1/1;overflow:hidden;outline:1px solid {{ g.ring }};outline-offset:3px;background:#E6D6BF;"><img src="{{ g.src }}" alt="{{ g.caption }}" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
+    </sc-for>
+  </div>
+</section>
+
+<section id="location" data-screen-label="Sky Tower · Location" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);background:#F3E9DA;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(32px,5vw,72px);">
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>LOCATION</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">S. No. 86/2,<br>Bavdhan BK, Pune 411021</h2>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ places }}" as="pl" hint-placeholder-count="7">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.16);">
+            <span style="font-size:17px;font-weight:500;">{{ pl.name }}</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.06em;white-space:nowrap;">{{ pl.d }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.1em;color:#8A7262;">DISTANCES AS PER PROJECT BROCHURE · APPROX.</p>
+    </div>
+    <div style="position:relative;min-height:480px;overflow:hidden;background:#E6D6BF;">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Bavdhan+Budruk+Pune" target="_blank" rel="noopener" aria-label="Open EH Sky Tower's location in Google Maps" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;text-decoration:none;color:#3A2A20;background-color:#E6D6BF;background-image:linear-gradient(rgba(58,42,32,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(58,42,32,.07) 1px,transparent 1px),linear-gradient(28deg,transparent 47%,rgba(251,245,236,.85) 47%,rgba(251,245,236,.85) 53%,transparent 53%),linear-gradient(118deg,transparent 48.5%,rgba(251,245,236,.7) 48.5%,rgba(251,245,236,.7) 51.5%,transparent 51.5%);background-size:48px 48px,48px 48px,100% 100%,100% 100%;"><span style="width:26px;height:26px;background:#A8643F;border:3px solid #FBF5EC;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 8px 18px rgba(58,42,32,.28);"></span><span style="font-weight:800;font-size:clamp(22px,3vw,34px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">Bavdhan, Pune</span><span style="font-size:14px;color:#6B5546;">EH Sky Tower · Bavdhan Budruk</span><span style="background:#3A2A20;color:#FBF5EC;padding:13px 18px;font-weight:600;font-size:10px;letter-spacing:.14em;">OPEN IN GOOGLE MAPS →</span></a>
+      <iframe data-eh-map="" title="EH Sky Tower location" src="https://maps.google.com/maps?q=Bavdhan%20Budruk%2C%20Pune&amp;z=14&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) sepia(.35) contrast(.92);"></iframe>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bavdhan+Budruk+Pune" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;background:#3A2A20;color:#FBF5EC;padding:13px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;text-decoration:none;">GET DIRECTIONS →</a>
+    </div>
+  </div>
+</section>
+
+<section id="brochure" data-screen-label="Sky Tower · Price & brochure" style="padding:clamp(56px,7vw,100px) clamp(18px,3.5vw,56px);background:#3A2A20;color:#FBF5EC;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:32px;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#CDBBA6;">3 &amp; 4 BHK · EH SKY TOWER · MAHARERA PR1260002501000</span>
+      <div style="font-weight:800;font-size:clamp(38px,5vw,76px);line-height:.92;letter-spacing:-.05em;">PRICE ON REQUEST</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="#enquire" style="display:flex;align-items:center;height:52px;padding:0 24px;background:#FBF5EC;color:#3A2A20;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#E3B48F;color:#3A2A20;">REQUEST PRICE SHEET</a>
+      <a href="assets/rera-eh-sky-tower.pdf" target="_blank" style="display:flex;align-items:center;height:52px;padding:0 24px;border:1px solid rgba(251,245,236,.5);color:#FBF5EC;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#FBF5EC;color:#3A2A20;">MAHARERA CERTIFICATE ↓</a>
+      <a href="assets/brochure-eh-sky-tower.pdf" target="_blank" style="display:flex;align-items:center;height:52px;padding:0 24px;border:1px solid rgba(251,245,236,.5);color:#FBF5EC;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#FBF5EC;color:#3A2A20;">DOWNLOAD BROCHURE ↓</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="EnquiryForm" heading="Visit EH Sky Tower." default-project="EH Sky Tower — Bavdhan" image="assets/living.jpg" hint-size="100%,820px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { plan: '3', g: 0, w: typeof window !== 'undefined' ? window.innerWidth : 1440 };
+  componentDidMount() { this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this.onR); }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); }
+  renderVals() {
+    const s = this.state;
+    const facts = [
+      ['LOCATION', 'Bavdhan BK, Pune'], ['CONFIGURATIONS', '3 & 4 BHK'], ['CARPET AREA', '993 – 1,347 sq.ft'],
+      ['RESIDENCES', '105 homes · 21 storeys'], ['POSSESSION', 'July 2030 (MahaRERA)'], ['MAHARERA NO.', 'PR1260002501000']
+    ].map(([k, v]) => ({ k, v }));
+    const plans = {
+      '3': { name: '3 BHK', rows: [['CARPET AREA (RERA)', '993 – 1,081 sq.ft'], ['INCL. BALCONIES', '1,106 – 1,207 sq.ft'], ['LAYOUTS', '3 types'], ['LIVING ROOM', "11'8\" × 17'1\""], ['BATHROOMS', '3']] },
+      '4': { name: '4 BHK', rows: [['CARPET AREA (RERA)', '1,347 sq.ft'], ['INCL. BALCONIES', '1,509 sq.ft'], ['LAYOUTS', '1 type'], ['LIVING ROOM', "11'6\" × 17'7\""], ['BATHROOMS', '4']] }
+    };
+    const P = { ...plans[s.plan], cta: 'GET PRICE FOR ' + plans[s.plan].name, rows: plans[s.plan].rows.map(([k, v]) => ({ k, v })) };
+    const tab = (k, label) => ({ label, bg: s.plan === k ? '#3A2A20' : 'transparent', fg: s.plan === k ? '#FBF5EC' : '#3A2A20', select: () => this.setState({ plan: k }) });
+    const amenities = ['Rooftop swimming pool', 'Poolside deck with in-pool seating', 'Rooftop party lawn', 'Open-air gym', "Children's play zone", "Senior citizens' sit-out", 'Pergola lounge & chit-chat corner', 'Buffet & bar counters', 'Clubhouse with indoor games', 'Fully equipped gymnasium', 'Multipurpose party hall', 'Grand entrance plaza', 'Landscaped greens & lawn mound', 'Party lawn with stage', 'Dedicated bus stop & waiting area', 'Changing & shower rooms']
+      .map((t, i) => ({ t, n: String(i + 1).padStart(2, '0') }));
+    const imgs = [['assets/living-dining.jpg', 'LIVING & DINING · SAMPLE FLAT'], ['assets/bedroom-master.jpg', 'MASTER BEDROOM · SAMPLE FLAT'], ['assets/living.jpg', 'LIVING ROOM · SAMPLE FLAT'], ['assets/foyer.jpg', 'FOYER · SAMPLE FLAT'], ['assets/bedroom-kids.jpg', "KIDS' BEDROOM · SAMPLE FLAT"]];
+    const gal = imgs.map(([src, caption], i) => ({ src, caption, bigOp: i === s.g ? 1 : 0, ring: i === s.g ? '#3A2A20' : 'transparent', pick: () => { if (this.state.g !== i) this.setState({ g: i }); } }));
+    const places = [['SNBP School, Bavdhan', '450 M'], ['Ryan International School', '950 M'], ['Chellaram Hospital', '3 KM'], ['Kothrud', '4 KM'], ['Chandni Chowk ST Bus Terminal', '4 KM'], ['Vanaz Metro Station', '5 KM'], ['Mumbai–Pune Expressway', '5 KM'], ['Sahyadri Hospital', '5 KM'], ['Baner', '8 KM'], ['Central Mall', '8 KM'], ['Hinjewadi IT Park', '13 KM'], ['Pune Airport', '23 KM']].map(([name, d]) => ({ name, d }));
+    return { desktop: s.w >= 960, facts, planTabs: [tab('3', '3 BHK'), tab('4', '4 BHK')], plan: P, is3: s.plan === '3', is4: s.plan === '4', amenities, gal, galCaption: imgs[s.g][1], places };
+  }
+}
+</script>
+</body>
+</html>

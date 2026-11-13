@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+</helmet>
+<sc-if value="{{ overlay }}" hint-placeholder-val="{{ true }}">
+  <header style="position:absolute;top:0;left:0;right:0;z-index:30;padding:20px clamp(18px,3.5vw,56px) 0;">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.3);">
+      <a href="Home.dc.html" style="display:flex;flex:0 0 auto;"><img src="assets/eh-logo-light.png" alt="Engineers Horizon" style="height:30px;width:auto;display:block;"></a>
+      <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+        <nav style="display:flex;align-items:center;gap:clamp(16px,2.2vw,34px);">
+          <sc-for list="{{ links }}" as="l" hint-placeholder-count="6">
+            <sc-if value="{{ l.plain }}" hint-placeholder-val="{{ true }}">
+              <a href="{{ l.href }}" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#fff;text-decoration:none;opacity:{{ l.op }};padding:6px 0;border-bottom:1px solid {{ l.lineLight }};">{{ l.label }}</a>
+            </sc-if>
+            <sc-if value="{{ l.menu }}" hint-placeholder-val="{{ false }}">
+              <div onMouseEnter="{{ l.open }}" onMouseLeave="{{ l.close }}" style="position:relative;">
+                <button onClick="{{ l.toggle }}" aria-haspopup="true" aria-expanded="{{ l.expanded }}" style="display:flex;align-items:center;gap:6px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#fff;background:transparent;border:0;border-bottom:1px solid {{ l.lineLight }};opacity:{{ l.op }};padding:6px 0;cursor:pointer;">{{ l.label }}<span style="font-size:9px;display:inline-block;transform:rotate({{ l.arrow }});transition:transform .25s;">▾</span></button>
+                <sc-if value="{{ l.isOpen }}" hint-placeholder-val="{{ false }}">
+                  <div style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:70;">
+                    <div style="width:340px;background:#FBF5EC;border:1px solid rgba(58,42,32,.16);box-shadow:0 18px 40px rgba(58,42,32,.18);padding:8px;display:flex;flex-direction:column;">
+                      <sc-for list="{{ l.items }}" as="p" hint-placeholder-count="3">
+                        <a href="{{ p.href }}" style="display:flex;align-items:center;gap:14px;padding:10px;text-decoration:none;color:#3A2A20;" style-hover="background:#F3E9DA;">
+                          <img src="{{ p.img }}" alt="" style="width:64px;height:64px;object-fit:cover;display:block;flex:0 0 auto;">
+                          <span style="display:flex;flex-direction:column;gap:5px;flex:1;min-width:0;">
+                            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;letter-spacing:-.01em;">{{ p.name }}</span>
+                            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;color:#6B5546;">{{ p.meta }}</span>
+                          </span>
+                          <span style="font-size:14px;color:#A8643F;">→</span>
+                        </a>
+                      </sc-for>
+                      <a href="{{ l.allHref }}" style="margin-top:4px;padding:12px 10px 6px;border-top:1px solid rgba(58,42,32,.12);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#3A2A20;text-decoration:none;" style-hover="color:#A8643F;">{{ l.allLabel }}</a>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+          </sc-for>
+        </nav>
+        <a href="Contact.dc.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#fff;text-decoration:none;padding:9px 14px;border:1px solid rgba(255,255,255,.6);" style-hover="background:#fff;color:#3A2A20;">CONTACT</a>
+      </sc-if>
+      <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggle }}" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#fff;background:transparent;border:1px solid rgba(255,255,255,.6);padding:0 14px;height:44px;cursor:pointer;">{{ menuLabel }}</button>
+      </sc-if>
+    </div>
+  </header>
+</sc-if>
+<sc-if value="{{ solid }}" hint-placeholder-val="{{ false }}">
+  <header style="position:sticky;top:0;z-index:30;background:#FBF5EC;padding:16px clamp(18px,3.5vw,56px);border-bottom:1px solid rgba(58,42,32,.14);">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="Home.dc.html" style="display:flex;flex:0 0 auto;"><img src="assets/eh-logo.png" alt="Engineers Horizon" style="height:30px;width:auto;display:block;"></a>
+      <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+        <nav style="display:flex;align-items:center;gap:clamp(16px,2.2vw,34px);">
+          <sc-for list="{{ links }}" as="l" hint-placeholder-count="6">
+            <sc-if value="{{ l.plain }}" hint-placeholder-val="{{ true }}">
+              <a href="{{ l.href }}" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#3A2A20;text-decoration:none;opacity:{{ l.op }};padding:6px 0;border-bottom:1px solid {{ l.lineDark }};">{{ l.label }}</a>
+            </sc-if>
+            <sc-if value="{{ l.menu }}" hint-placeholder-val="{{ false }}">
+              <div onMouseEnter="{{ l.open }}" onMouseLeave="{{ l.close }}" style="position:relative;">
+                <button onClick="{{ l.toggle }}" aria-haspopup="true" aria-expanded="{{ l.expanded }}" style="display:flex;align-items:center;gap:6px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#3A2A20;background:transparent;border:0;border-bottom:1px solid {{ l.lineDark }};opacity:{{ l.op }};padding:6px 0;cursor:pointer;">{{ l.label }}<span style="font-size:9px;display:inline-block;transform:rotate({{ l.arrow }});transition:transform .25s;">▾</span></button>
+                <sc-if value="{{ l.isOpen }}" hint-placeholder-val="{{ false }}">
+                  <div style="position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;z-index:70;">
+                    <div style="width:340px;background:#FBF5EC;border:1px solid rgba(58,42,32,.16);box-shadow:0 18px 40px rgba(58,42,32,.18);padding:8px;display:flex;flex-direction:column;">
+                      <sc-for list="{{ l.items }}" as="p" hint-placeholder-count="3">
+                        <a href="{{ p.href }}" style="display:flex;align-items:center;gap:14px;padding:10px;text-decoration:none;color:#3A2A20;" style-hover="background:#F3E9DA;">
+                          <img src="{{ p.img }}" alt="" style="width:64px;height:64px;object-fit:cover;display:block;flex:0 0 auto;">
+                          <span style="display:flex;flex-direction:column;gap:5px;flex:1;min-width:0;">
+                            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;letter-spacing:-.01em;">{{ p.name }}</span>
+                            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;color:#6B5546;">{{ p.meta }}</span>
+                          </span>
+                          <span style="font-size:14px;color:#A8643F;">→</span>
+                        </a>
+                      </sc-for>
+                      <a href="{{ l.allHref }}" style="margin-top:4px;padding:12px 10px 6px;border-top:1px solid rgba(58,42,32,.12);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#3A2A20;text-decoration:none;" style-hover="color:#A8643F;">{{ l.allLabel }}</a>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+          </sc-for>
+        </nav>
+        <a href="Contact.dc.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#FBF5EC;background:#3A2A20;text-decoration:none;padding:10px 15px;" style-hover="background:#A8643F;">CONTACT</a>
+      </sc-if>
+      <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ toggle }}" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#3A2A20;background:transparent;border:1px solid rgba(58,42,32,.4);padding:0 14px;height:44px;cursor:pointer;">{{ menuLabel }}</button>
+      </sc-if>
+    </div>
+  </header>
+</sc-if>
+<sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:60;background:#FBF5EC;display:flex;flex-direction:column;padding:20px 22px 28px;overflow:auto;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid rgba(58,42,32,.14);">
+      <img src="assets/eh-logo.png" alt="Engineers Horizon" style="height:28px;width:auto;display:block;">
+      <button onClick="{{ toggle }}" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#3A2A20;background:transparent;border:1px solid rgba(58,42,32,.4);padding:0 14px;height:44px;cursor:pointer;">CLOSE</button>
+    </div>
+    <nav style="display:flex;flex-direction:column;margin-top:12px;">
+      <sc-for list="{{ allLinks }}" as="l" hint-placeholder-count="10">
+        <sc-if value="{{ l.main }}" hint-placeholder-val="{{ true }}">
+          <a href="{{ l.href }}" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:28px;letter-spacing:-.02em;text-transform:uppercase;color:#3A2A20;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.1);display:flex;justify-content:space-between;align-items:center;">{{ l.label }}<span style="font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;font-weight:400;color:#8A7262;">→</span></a>
+        </sc-if>
+        <sc-if value="{{ l.sub }}" hint-placeholder-val="{{ false }}">
+          <a href="{{ l.href }}" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:18px;letter-spacing:-.01em;color:#3A2A20;text-decoration:none;padding:12px 0 12px 18px;border-bottom:1px solid rgba(58,42,32,.1);border-left:2px solid #A8643F;display:flex;justify-content:space-between;align-items:center;gap:12px;"><span style="display:flex;flex-direction:column;gap:3px;">{{ l.label }}<span style="font-size:10px;font-weight:600;letter-spacing:.12em;color:#6B5546;">{{ l.meta }}</span></span><span style="font-size:12px;font-weight:400;color:#8A7262;">→</span></a>
+        </sc-if>
+      </sc-for>
+    </nav>
+    <div style="margin-top:auto;padding-top:28px;display:flex;flex-direction:column;gap:6px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.08em;color:#6B5546;">
+      <a href="tel:+918484050579" style="color:#3A2A20;text-decoration:none;">+91 84840 50579</a>
+      <a href="mailto:info@engineershorizon.com" style="color:#3A2A20;text-decoration:none;">INFO@ENGINEERSHORIZON.COM</a>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1440px&quot;,&quot;height&quot;:&quot;120px&quot;},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;overlay&quot;,&quot;solid&quot;],&quot;default&quot;:&quot;overlay&quot;,&quot;tsType&quot;:&quot;'overlay'|'solid'&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;HOME&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1440, open: false, menu: null };
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth });
+    this.onKey = (e) => { if (e.key === 'Escape' && this.state.menu) this.setState({ menu: null }); };
+    window.addEventListener('resize', this.onR);
+    window.addEventListener('keydown', this.onKey);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); window.removeEventListener('keydown', this.onKey); }
+  renderVals() {
+    const active = this.props.active ?? 'HOME';
+    const overlay = (this.props.variant ?? 'overlay') === 'overlay';
+    const P = [
+      { name: 'IOS Prime', meta: 'TATHAWADE · 2 & 3 BHK', page: 'IOS%20Prime.dc.html', img: 'assets/iosprime-ext.jpg' },
+      { name: 'EH Towers', meta: 'TATHAWADE (JEEVAN NAGAR) · 2 & 3 BHK', page: 'EH%20Towers.dc.html', img: 'assets/ehtowers-ext.jpg' },
+      { name: 'EH Sky Tower', meta: 'BAVDHAN · 3 & 4 BHK', page: 'EH%20Sky%20Tower.dc.html', img: 'assets/skytower-ext.jpg' }
+    ];
+    // Dropdown menus: each lists the three projects and jumps to the right section of each project page
+    const menus = {
+      PROJECTS: { items: P.map(p => ({ ...p, href: p.page })), allHref: 'Home.dc.html#projects', allLabel: 'SEE ALL PROJECTS, INCLUDING DELIVERED →', mobileMeta: p => p.meta },
+      AMENITIES: { items: P.map(p => ({ ...p, href: p.page + '#amenities', meta: 'AMENITIES · ' + p.meta.split(' · ')[0] })), allHref: 'Home.dc.html#projects', allLabel: 'ALL PROJECTS →', mobileMeta: () => 'AMENITIES' },
+      LOCATION: { items: P.map(p => ({ ...p, href: p.page + '#location', meta: 'LOCATION · ' + p.meta.split(' · ')[0] })), allHref: 'Home.dc.html#location', allLabel: 'COMPARE BAVDHAN & TATHAWADE →', mobileMeta: () => 'LOCATION & DISTANCES' }
+    };
+    const base = [
+      ['HOME', 'Home.dc.html'], ['ABOUT', 'About.dc.html'], ['PROJECTS', 'Home.dc.html#projects'],
+      ['AMENITIES', 'Home.dc.html#projects'], ['LOCATION', 'Home.dc.html#location'], ['BLOG', 'Blog.dc.html']
+    ];
+    const desktop = this.state.w >= 960;
+    const onProject = ['IOS PRIME', 'EH TOWERS', 'EH SKY TOWER'].includes(String(active).toUpperCase());
+    const links = base.map(([label, href]) => {
+      const on = label === active || (label === 'PROJECTS' && onProject);
+      const m = menus[label];
+      const isOpen = !!m && desktop && this.state.menu === label;
+      return {
+        label, href, menu: !!m, plain: !m, op: on ? 1 : 0.82,
+        lineLight: on ? 'rgba(255,255,255,.9)' : 'transparent', lineDark: on ? '#3A2A20' : 'transparent',
+        items: m ? m.items : [], allHref: m ? m.allHref : href, allLabel: m ? m.allLabel : '',
+        isOpen, expanded: isOpen ? 'true' : 'false', arrow: isOpen ? '180deg' : '0deg',
+        open: () => { if (this.state.menu !== label) this.setState({ menu: label }); },
+        close: () => { if (this.state.menu === label) this.setState({ menu: null }); },
+        toggle: () => this.setState(s => ({ menu: s.menu === label ? null : label }))
+      };
+    });
+    const extra = [['EH-Privilege', 'EH%20Privilege.dc.html'], ['EH-Connect', 'EH%20Connect.dc.html'], ['NRI Corner', 'NRI%20Corner.dc.html'], ['Events', 'Events.dc.html'], ['Careers', 'Careers.dc.html'], ['FAQ', 'FAQ.dc.html'], ['Contact', 'Contact.dc.html']];
+    const allLinks = [];
+    base.forEach(([label, href]) => {
+      const m = menus[label];
+      allLinks.push({ label, href: m ? m.allHref : href, main: true, sub: false });
+      if (m) m.items.forEach(p => allLinks.push({ label: p.name, meta: m.mobileMeta(p), href: p.href, main: false, sub: true }));
+    });
+    extra.forEach(([label, href]) => allLinks.push({ label, href, main: true, sub: false }));
+    return {
+      overlay, solid: !overlay, desktop, mobile: !desktop, links, allLinks,
+      open: this.state.open && !desktop, menuLabel: 'MENU',
+      toggle: () => this.setState(s => ({ open: !s.open }))
+    };
+  }
+}
+</script>
+</body>
+</html>

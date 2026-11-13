@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Engineers Horizon — Value at Quality homes in Pune</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./eh-motion.js"></script>
+<script src="./eh-maps.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBF5EC;color:#3A2A20;-webkit-font-smoothing:antialiased}
+a{color:#3A2A20}
+a:hover{color:#A8643F}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="font-family:'Plus Jakarta Sans',sans-serif;color:#3A2A20;background:#FBF5EC;overflow-x:hidden;">
+
+<!-- HERO -->
+<section data-screen-label="Home · Hero" style="position:relative;height:max(100vh,680px);min-height:680px;overflow:hidden;background:#C7A98A;">
+  <div style="position:absolute;inset:0;">
+    <img data-reveal="zoom" data-load="" src="assets/skytower-hero.jpg" alt="EH Sky Tower, Bavdhan" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+  </div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,31,24,.28) 0%,rgba(43,31,24,.05) 24%,rgba(43,31,24,.16) 40%,rgba(43,31,24,.66) 100%);pointer-events:none;"></div>
+  <dc-import name="SiteHeader" variant="overlay" active="HOME" hint-size="100%,76px"></dc-import>
+  <div data-reveal="rise-lg" data-load="" style="position:absolute;left:0;right:0;top:clamp(116px,17vh,180px);text-align:center;pointer-events:none;">
+    <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;line-height:.8;letter-spacing:-.025em;color:#fff;font-size:{{ titleSize }};white-space:nowrap;" data-om-label="Engineer">ENGINEERS HORIZON</div>
+  </div>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+    <img data-reveal="zoom" data-load="" src="assets/skytower-hero-cutout.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; z-index: 2; pointer-events: none; top: -5px; left: 2px">
+  </sc-if>
+  <div style="position:absolute;left:clamp(18px,3.5vw,56px);right:clamp(18px,3.5vw,56px);bottom:{{ heroBottom }};z-index:3;display:grid;grid-template-columns:minmax(0,1fr);align-items:end;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.3);color:#fff;">
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:24px;">
+            <div style="display:flex;flex-direction:column;gap:22px;max-width:{{ heroTextMax }};width:100%;padding-bottom:6px;">
+      <p data-reveal="fade" data-load="" data-delay="200" style="margin:0;font-size:clamp(15px,1.15vw,17px);line-height:1.55;color:#fff;text-shadow:0 1px 12px rgba(43,31,24,.45);text-wrap:pretty;">Thoughtfully engineered 2, 3 &amp; 4 BHK homes across Pune's most connected neighbourhoods.</p>
+      <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+      <div data-reveal="rise" data-load="" data-delay="300" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.1vw,16px);text-shadow:0 1px 10px rgba(43,31,24,.55);">
+      <div style="display:flex;flex-direction:column;gap:6px;padding-left:clamp(10px,1vw,14px);border-left:1px solid rgba(255,255,255,.35);"><div style="font-weight:700;font-size:clamp(22px,1.9vw,30px);letter-spacing:-.02em;line-height:1;">16+</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;line-height:1.45;color:rgba(255,255,255,.88);">YEARS OF<br>EXPERIENCE</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding-left:clamp(10px,1vw,14px);border-left:1px solid rgba(255,255,255,.35);"><div style="font-weight:700;font-size:clamp(22px,1.9vw,30px);letter-spacing:-.02em;line-height:1;">1,000+</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;line-height:1.45;color:rgba(255,255,255,.88);">HAPPY<br>FAMILIES</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding-left:clamp(10px,1vw,14px);border-left:1px solid rgba(255,255,255,.35);"><div style="font-weight:700;font-size:clamp(22px,1.9vw,30px);letter-spacing:-.02em;line-height:1;">03</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;line-height:1.45;color:rgba(255,255,255,.88);">ONGOING<br>PROJECTS</div></div>
+      <div style="display:flex;flex-direction:column;gap:6px;padding-left:clamp(10px,1vw,14px);border-left:1px solid rgba(255,255,255,.35);"><div style="font-weight:700;font-size:clamp(22px,1.9vw,30px);letter-spacing:-.02em;line-height:1;">04</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;line-height:1.45;color:rgba(255,255,255,.88);">DELIVERED<br>PROJECTS</div></div>
+      </div>
+      </sc-if>
+      </div>
+      <h1 data-reveal="mask" data-load="" data-delay="450" style="margin: 0; font-weight: 700; line-height: 1.02; letter-spacing: 0em; color: #fff; text-shadow: 0 2px 24px rgba(43,31,24,.35); text-wrap: balance; width: auto; max-width: 568px; height: auto; font-size: {{ heroH1Size }}">Built on value.<br>Finished with quality.</h1>
+      <a data-reveal="rise" data-load="" data-delay="700" href="#enquire" style="display:flex;height:48px;background:#fff;color:#3A2A20;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;transition:background .3s,color .3s;" style-hover="background:#3A2A20;color:#fff;">
+        <span style="display:flex;align-items:center;padding:0 22px;white-space:nowrap;">BOOK A SITE VISIT</span>
+        <span style="display:flex;align-items:center;padding:0 16px;border-left:1px solid rgba(58,42,32,.2);">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" data-screen-label="Home · About" style="padding:clamp(64px,9vw,140px) clamp(18px,3.5vw,56px);display:flex;flex-direction:column;gap:clamp(48px,6vw,88px);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:28px clamp(40px,6vw,96px);align-items:end;">
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div data-reveal="rise" style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>ABOUT ENGINEERS HORIZON</div>
+      <h2 data-reveal="mask" style="margin:0;font-weight:700;font-size:clamp(36px,4.4vw,64px);line-height:1;letter-spacing:-.03em;">Value at Quality,<br>since 2010.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:24px;">
+      <p data-reveal="rise" style="margin:0;font-size:clamp(16px,1.3vw,19px);line-height:1.6;color:#3A2A20;text-wrap:pretty;">Engineers Horizon is a Pune developer built on a simple idea — honest construction, efficient space planning and modern architecture, so every home holds its value for years. Four delivered projects across Sus, Wakad and Tathawade, and more than 1,000 families already call an Engineers Horizon home.</p>
+      <a data-reveal="rise" href="About.dc.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-decoration:none;border-bottom:1px solid #3A2A20;padding-bottom:4px;">OUR STORY →</a>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:{{ aboutCols }};gap:clamp(14px,1.6vw,24px);">
+      <figure data-reveal="rise" data-delay="0" style="margin:0;display:flex;flex-direction:column;gap:14px;">
+        <div style="aspect-ratio:4/5;overflow:hidden;background:#E6D6BF;"><img src="assets/viento-ext.jpg" alt="Viento, SUS" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,1,.3,1);" style-hover="transform:scale(1.04);"></div>
+        <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px;padding-top:12px;border-top:1px solid rgba(58,42,32,.16);"><span style="font-weight:700;font-size:18px;letter-spacing:-.02em;">Viento</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;color:#6B5546;">SUS · DELIVERED</span></figcaption>
+      </figure>
+      <figure data-reveal="rise" data-delay="100" style="margin:0;display:flex;flex-direction:column;gap:14px;">
+        <div style="aspect-ratio:4/5;overflow:hidden;background:#E6D6BF;"><img src="assets/windows-ext.jpg" alt="Windows, SUS" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,1,.3,1);" style-hover="transform:scale(1.04);"></div>
+        <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px;padding-top:12px;border-top:1px solid rgba(58,42,32,.16);"><span style="font-weight:700;font-size:18px;letter-spacing:-.02em;">Windows</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;color:#6B5546;">SUS · DELIVERED</span></figcaption>
+      </figure>
+      <figure data-reveal="rise" data-delay="200" style="margin:0;display:flex;flex-direction:column;gap:14px;">
+        <div style="aspect-ratio:4/5;overflow:hidden;background:#E6D6BF;"><img src="assets/bonheur-ext.jpg" alt="Bonheur, WAKAD" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,1,.3,1);" style-hover="transform:scale(1.04);"></div>
+        <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px;padding-top:12px;border-top:1px solid rgba(58,42,32,.16);"><span style="font-weight:700;font-size:18px;letter-spacing:-.02em;">Bonheur</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;color:#6B5546;">WAKAD · DELIVERED</span></figcaption>
+      </figure>
+      <figure data-reveal="rise" data-delay="300" style="margin:0;display:flex;flex-direction:column;gap:14px;">
+        <div style="aspect-ratio:4/5;overflow:hidden;background:#E6D6BF;"><img src="assets/ios-ext.jpg" alt="iOS, TATHAWADE" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,1,.3,1);" style-hover="transform:scale(1.04);"></div>
+        <figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 10px;padding-top:12px;border-top:1px solid rgba(58,42,32,.16);"><span style="font-weight:700;font-size:18px;letter-spacing:-.02em;">iOS</span><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;color:#6B5546;">TATHAWADE · DELIVERED</span></figcaption>
+      </figure>
+  </div>
+  <div style="display:grid;grid-template-columns:{{ aboutCols }};gap:clamp(14px,1.6vw,24px);">
+      <div data-reveal="rise" data-delay="0" style="display:flex;flex-direction:column;gap:10px;padding:clamp(22px,2.4vw,32px) 0 0;border-top:1px solid #3A2A20;"><div style="font-weight:700;font-size:clamp(38px,3.8vw,56px);letter-spacing:-.03em;line-height:1;">16+</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">YEARS OF EXPERIENCE</div></div>
+      <div data-reveal="rise" data-delay="100" style="display:flex;flex-direction:column;gap:10px;padding:clamp(22px,2.4vw,32px) 0 0;border-top:1px solid #3A2A20;"><div style="font-weight:700;font-size:clamp(38px,3.8vw,56px);letter-spacing:-.03em;line-height:1;">1,000+</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">HAPPY FAMILIES</div></div>
+      <div data-reveal="rise" data-delay="200" style="display:flex;flex-direction:column;gap:10px;padding:clamp(22px,2.4vw,32px) 0 0;border-top:1px solid #3A2A20;"><div style="font-weight:700;font-size:clamp(38px,3.8vw,56px);letter-spacing:-.03em;line-height:1;">03</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">ONGOING PROJECTS</div></div>
+      <div data-reveal="rise" data-delay="300" style="display:flex;flex-direction:column;gap:10px;padding:clamp(22px,2.4vw,32px) 0 0;border-top:1px solid #3A2A20;"><div style="font-weight:700;font-size:clamp(38px,3.8vw,56px);letter-spacing:-.03em;line-height:1;">04</div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">DELIVERED PROJECTS</div></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" data-screen-label="Home · Projects" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);background:#F3E9DA;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px;padding-bottom:36px;border-bottom:1px solid rgba(58,42,32,.16);">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div data-reveal="rise" style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>OUR PROJECTS</div>
+      <h2 data-reveal="mask" style="margin:0;font-weight:700;font-size:clamp(36px,5vw,72px);line-height:.95;letter-spacing:-.03em;">A Home for<br>Every Chapter</h2>
+    </div>
+    <div style="display:flex;border:1px solid #3A2A20;">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
+        <button onClick="{{ t.select }}" style="height:46px;padding:0 22px;border:0;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;background:{{ t.bg }};color:{{ t.fg }};">{{ t.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+  <div data-no-motion="" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:40px 28px;padding-top:40px;">
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+      <article style="display:flex;flex-direction:column;gap:18px;">
+        <sc-if value="{{ p.live }}" hint-placeholder-val="{{ true }}">
+          <a href="{{ p.href }}" aria-label="View {{ p.name }}" style="display:block;position:relative;aspect-ratio:4/5;overflow:hidden;background:#E6D6BF;text-decoration:none;">
+            <img src="{{ p.img }}" alt="{{ p.name }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.04);">
+            <span style="position:absolute;top:14px;left:14px;background:#FBF5EC;color:#3A2A20;padding:7px 10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;">{{ p.status }}</span>
+          </a>
+        </sc-if>
+        <sc-if value="{{ p.done }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative;aspect-ratio:4/5;overflow:hidden;background:#E6D6BF;">
+            <img src="{{ p.img }}" alt="{{ p.name }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <span style="position:absolute;top:14px;left:14px;background:#FBF5EC;color:#3A2A20;padding:7px 10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;">{{ p.status }}</span>
+          </div>
+        </sc-if>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;">
+          <h3 style="margin:0;font-weight:700;font-size:28px;letter-spacing:-.025em;line-height:1;">{{ p.name }}</h3>
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;color:#6B5546;white-space:nowrap;">{{ p.price }}</span>
+        </div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;line-height:1.6;">{{ p.loc }} · {{ p.config }}</div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:14px;border-top:1px solid rgba(58,42,32,.16);font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;">
+          <span style="color:#6B5546;">MAHARERA · {{ p.rera }}</span>
+          <sc-if value="{{ p.live }}" hint-placeholder-val="{{ true }}">
+            <a href="{{ p.href }}" style="display:inline-block;padding:10px 0;margin:-10px 0;text-decoration:none;font-size:11px;color:#3A2A20;" style-hover="color:#A8643F;">VIEW PROJECT →</a>
+          </sc-if>
+          <sc-if value="{{ p.done }}" hint-placeholder-val="{{ false }}">
+            <span style="font-size:11px;color:#3A2A20;">DELIVERED ✓</span>
+          </sc-if>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section data-screen-label="Home · Lifestyle gallery" style="padding:clamp(64px,9vw,130px) clamp(18px,3.5vw,56px);">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:28px;margin-bottom:clamp(32px,4vw,56px);">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div data-reveal="rise" style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>LIFE AT ENGINEERS HORIZON</div>
+      <h2 data-reveal="mask" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">A Better Way<br>to Live</h2>
+    </div>
+    <p data-reveal="rise" style="margin:0;max-width:460px;font-size:15px;line-height:1.6;color:#6B5546;text-wrap:pretty;">Homes planned around how families actually live — rooms that take furniture well, light that moves through the day, and shared spaces for the kids, the evening walk and the weekend swim. Every photo here is from our own sites and sample flats.</p>
+  </div>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(16px,1.6vw,24px);align-items:stretch;">
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:clamp(10px,1vw,16px);">
+        <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="8">
+          <button onMouseEnter="{{ g.pick }}" onFocus="{{ g.pick }}" onClick="{{ g.pick }}" title="{{ g.caption }}" style="grid-row:{{ g.row }};grid-column:{{ g.col }};aspect-ratio:1/1.1;padding:0;border:0;cursor:pointer;background:#E6D6BF;overflow:hidden;position:relative;outline:1px solid {{ g.ring }};outline-offset:3px;">
+            <img src="{{ g.src }}" alt="{{ g.caption }}" style="width:100%;height:100%;object-fit:cover;display:block;opacity:{{ g.op }};transition:opacity .4s;">
+          </button>
+        </sc-for>
+        <div style="grid-row:3;grid-column:3;aspect-ratio:1/1.1;background:#3A2A20;color:#FBF5EC;padding:clamp(14px,1.4vw,20px);display:flex;flex-direction:column;justify-content:space-between;font-family:'Plus Jakarta Sans',sans-serif;">
+          <span style="font-weight:600;font-size:10px;letter-spacing:.14em;color:#CDBBA6;">{{ galIndex }} / 08</span>
+          <span style="font-weight:700;font-size:clamp(15px,1.4vw,20px);line-height:1.15;letter-spacing:-.01em;">{{ galCaption }}</span>
+          <div style="display:flex;gap:8px;">
+            <button onClick="{{ prevG }}" aria-label="Previous photo" style="flex:1;padding:9px 0;background:transparent;color:#FBF5EC;border:1px solid rgba(251,245,236,.4);cursor:pointer;font-size:14px;">←</button>
+            <button onClick="{{ nextG }}" aria-label="Next photo" style="flex:1;padding:9px 0;background:transparent;color:#FBF5EC;border:1px solid rgba(251,245,236,.4);cursor:pointer;font-size:14px;">→</button>
+          </div>
+        </div>
+      </div>
+      <div style="position:relative;min-height:520px;overflow:hidden;background:#E6D6BF;">
+        <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="1">
+          <img src="{{ g.src }}" alt="{{ g.caption }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ g.bigOp }};transform:scale({{ g.bigScale }});transition:opacity .9s ease, transform 1.6s cubic-bezier(.2,.7,.2,1);">
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * clamp(18px,3.5vw,56px));padding:0 clamp(18px,3.5vw,56px) 12px;-webkit-overflow-scrolling:touch;">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="3">
+        <figure style="flex:0 0 82%;margin:0;scroll-snap-align:start;display:flex;flex-direction:column;gap:10px;">
+          <img src="{{ g.src }}" alt="{{ g.caption }}" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;">
+          <figcaption style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;">{{ g.num }} · {{ g.caption }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+    <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;margin-top:8px;">SWIPE →</div>
+  </sc-if>
+</section>
+
+<!-- WHY -->
+<section data-screen-label="Home · Why EH" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);background:#F3E9DA;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div data-reveal="rise" style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>WHY ENGINEERS HORIZON</div>
+      <h2 data-reveal="mask" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">Six promises we<br>build into every home</h2>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));border-top:1px solid rgba(58,42,32,.2);border-left:1px solid rgba(58,42,32,.2);">
+    <sc-for list="{{ why }}" as="w" hint-placeholder-count="6">
+      <div data-reveal="rise" style="padding:clamp(24px,2.6vw,40px);border-right:1px solid rgba(58,42,32,.2);border-bottom:1px solid rgba(58,42,32,.2);display:flex;flex-direction:column;gap:14px;min-height:{{ whyMinH }};">
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#A8643F;">{{ w.n }}</span>
+        <h3 style="margin:auto 0 0;font-weight:700;font-size:24px;letter-spacing:-.03em;line-height:1.05;">{{ w.t }}</h3>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#6B5546;text-wrap:pretty;">{{ w.d }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" data-screen-label="Home · Location" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(32px,5vw,72px);">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div data-reveal="rise" style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>LOCATION ADVANTAGE</div>
+      <h2 data-reveal="mask" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">Close to work.<br>Closer to life.</h2>
+      <div style="display:flex;border:1px solid #3A2A20;align-self:flex-start;">
+        <sc-for list="{{ locTabs }}" as="t" hint-placeholder-count="2">
+          <button onClick="{{ t.select }}" style="height:44px;padding:0 18px;border:0;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;background:{{ t.bg }};color:{{ t.fg }};">{{ t.label }}</button>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ places }}" as="pl" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:96px 1fr auto;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.14);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;color:#6B5546;">{{ pl.k }}</span>
+            <span style="font-size:17px;font-weight:500;letter-spacing:-.01em;">{{ pl.name }}</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.06em;white-space:nowrap;">{{ pl.d }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.1em;color:#8A7262;">{{ locNote }}</p>
+    </div>
+    <div data-reveal="fade" style="position:relative;min-height:520px;background:#E6D6BF;overflow:hidden;">
+      <a href="{{ mapLink }}" target="_blank" rel="noopener" aria-label="Open this location in Google Maps" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;text-decoration:none;color:#3A2A20;background-color:#E6D6BF;background-image:linear-gradient(rgba(58,42,32,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(58,42,32,.07) 1px,transparent 1px),linear-gradient(28deg,transparent 47%,rgba(251,245,236,.85) 47%,rgba(251,245,236,.85) 53%,transparent 53%),linear-gradient(118deg,transparent 48.5%,rgba(251,245,236,.7) 48.5%,rgba(251,245,236,.7) 51.5%,transparent 51.5%);background-size:48px 48px,48px 48px,100% 100%,100% 100%;"><span style="width:26px;height:26px;background:#A8643F;border:3px solid #FBF5EC;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 8px 18px rgba(58,42,32,.28);"></span><span style="font-weight:800;font-size:clamp(22px,3vw,34px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">{{ mapPlace }}</span><span style="background:#3A2A20;color:#FBF5EC;padding:13px 18px;font-weight:600;font-size:10px;letter-spacing:.14em;">OPEN IN GOOGLE MAPS →</span></a>
+      <iframe data-eh-map="" title="Map" src="{{ mapSrc }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) sepia(.35) contrast(.92) brightness(1.02);"></iframe>
+      <div style="position:absolute;top:0;left:0;background:#3A2A20;color:#FBF5EC;padding:12px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;pointer-events:none;">{{ locLabel }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section data-screen-label="Home · Testimonials" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);background:#3A2A20;color:#FBF5EC;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center;margin-bottom:40px;">
+    <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #FBF5EC;"></span>FROM OUR FAMILIES</div>
+  </div>
+  <blockquote data-reveal="mask" style="margin:0;max-width:1100px;font-weight:600;font-size:clamp(26px,3.4vw,50px);line-height:1.12;letter-spacing:-.025em;text-wrap:pretty;min-height:3.4em;">“{{ quote.q }}”</blockquote>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;margin-top:48px;padding-top:24px;border-top:1px solid rgba(251,245,236,.2);">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <span style="font-weight:700;font-size:18px;">{{ quote.n }}</span>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;color:#CDBBA6;">{{ quote.p }}</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;">{{ quoteIdx }} / 03</span>
+      <button onClick="{{ prevQ }}" aria-label="Previous" style="width:48px;height:48px;border:1px solid rgba(251,245,236,.4);background:transparent;color:#FBF5EC;font-size:16px;cursor:pointer;" style-hover="background:#FBF5EC;color:#3A2A20;">←</button>
+      <button onClick="{{ nextQ }}" aria-label="Next" style="width:48px;height:48px;border:1px solid rgba(251,245,236,.4);background:transparent;color:#FBF5EC;font-size:16px;cursor:pointer;" style-hover="background:#FBF5EC;color:#3A2A20;">→</button>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section data-screen-label="Home · Programs" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;">
+    <a data-reveal="rise" href="EH%20Privilege.dc.html" style="text-decoration:none;color:#3A2A20;border:1px solid rgba(58,42,32,.22);padding:clamp(26px,2.6vw,40px);display:flex;flex-direction:column;gap:16px;min-height:300px;" style-hover="background:#F3E9DA;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#A8643F;">EH-PRIVILEGE</span>
+      <h3 style="margin:auto 0 0;font-weight:700;font-size:30px;letter-spacing:-.025em;line-height:1;">Rewards for the families who already live with us.</h3>
+      <p style="margin:0;font-size:15px;line-height:1.55;color:#6B5546;">Refer a friend, earn rewards, enjoy partner offers.</p>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">EXPLORE PRIVILEGE →</span>
+    </a>
+    <a data-reveal="rise" data-delay="100" href="EH%20Connect.dc.html" style="text-decoration:none;color:#3A2A20;border:1px solid rgba(58,42,32,.22);padding:clamp(26px,2.6vw,40px);display:flex;flex-direction:column;gap:16px;min-height:300px;" style-hover="background:#F3E9DA;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#A8643F;">EH-CONNECT · CHANNEL PARTNERS</span>
+      <h3 style="margin:auto 0 0;font-weight:700;font-size:30px;letter-spacing:-.025em;line-height:1;">Grow with a developer your clients can trust.</h3>
+      <p style="margin:0;font-size:15px;line-height:1.55;color:#6B5546;">Timely payouts, site support and a dedicated desk.</p>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">BECOME A PARTNER →</span>
+    </a>
+    <a data-reveal="rise" data-delay="200" href="NRI%20Corner.dc.html" style="text-decoration:none;color:#3A2A20;border:1px solid rgba(58,42,32,.22);padding:clamp(26px,2.6vw,40px);display:flex;flex-direction:column;gap:16px;min-height:300px;" style-hover="background:#F3E9DA;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#A8643F;">NRI CORNER</span>
+      <h3 style="margin:auto 0 0;font-weight:700;font-size:30px;letter-spacing:-.025em;line-height:1;">Buy your Pune home from anywhere in the world.</h3>
+      <p style="margin:0;font-size:15px;line-height:1.55;color:#6B5546;">Video walkthroughs, paperwork help, time-zone friendly calls.</p>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">NRI GUIDANCE →</span>
+    </a>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section data-screen-label="Home · Blog" style="padding:0 clamp(18px,3.5vw,56px) clamp(56px,8vw,120px);">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;padding:40px 0 36px;border-top:1px solid rgba(58,42,32,.16);">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>JOURNAL</div>
+      <h2 data-reveal="mask" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">Notes for<br>Pune homebuyers</h2>
+    </div>
+    <a href="Blog.dc.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-decoration:none;border-bottom:1px solid #3A2A20;padding-bottom:4px;">ALL ARTICLES →</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px 28px;">
+    <sc-for list="{{ posts }}" as="b" hint-placeholder-count="3">
+      <a data-reveal="rise" href="Blog%20Article.dc.html" style="text-decoration:none;color:#3A2A20;display:flex;flex-direction:column;gap:16px;">
+        <div style="aspect-ratio:3/2;overflow:hidden;"><img src="{{ b.img }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.04);"></div>
+        <div style="display:flex;justify-content:space-between;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;"><span>{{ b.cat }}</span><span>{{ b.date }}</span></div>
+        <h3 style="margin:0;font-weight:700;font-size:23px;line-height:1.12;letter-spacing:-.025em;text-wrap:pretty;">{{ b.t }}</h3>
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">READ →</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<div style="border-top:1px solid rgba(58,42,32,.16);"></div>
+<dc-import name="EnquiryForm" heading="Come see it for yourself." hint-size="100%,820px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1440, tab: 'ONGOING', gal: 0, loc: 'bavdhan', q: 0 };
+  componentDidMount() { this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this.onR); }
+  componentWillUnmount() { window.removeEventListener('resize', this.onR); }
+  renderVals() {
+    const s = this.state;
+    const desktop = s.w >= 960;
+    const tab = (label) => ({ label, bg: s.tab === label ? '#3A2A20' : 'transparent', fg: s.tab === label ? '#FBF5EC' : '#3A2A20', select: () => this.setState({ tab: label }) });
+    const ongoing = [
+      { slot: 'proj-skytower', name: 'EH Sky Tower', loc: 'BAVDHAN', config: '3 & 4 BHK', rera: 'PR1260002501000', status: 'NEW LAUNCH · POSSESSION JUL 2030', href: 'EH%20Sky%20Tower.dc.html', cta: 'VIEW PROJECT →', img: 'assets/skytower-ext.jpg' },
+      { slot: 'proj-ehtowers', name: 'EH Towers', loc: 'TATHAWADE (JEEVAN NAGAR)', config: '2 & 3 BHK', rera: 'P52100079038', status: 'UNDER CONSTRUCTION · DEC 2028', href: 'EH%20Towers.dc.html', cta: 'VIEW PROJECT →', img: 'assets/ehtowers-ext.jpg' },
+      { slot: 'proj-iosprime', name: 'IOS Prime', loc: 'TATHAWADE', config: '2 & 3 BHK', rera: 'P52100053819 · B1 P52100079123', status: 'UNDER CONSTRUCTION · DEC 2028', href: 'IOS%20Prime.dc.html', cta: 'VIEW PROJECT →', img: 'assets/iosprime-ext.jpg' }
+    ];
+    const completed = [
+      ['viento', 'Viento', 'SUS', '1, 2 & 3 BHK', 'P52100023329'], ['windows', 'Windows', 'SUS', '1 & 2 BHK', 'P52100005822'],
+      ['bonheur', 'Bonheur', 'WAKAD', '1, 2 & 3 BHK', 'P52100026648 · WING A P52100032282'], ['ios', 'iOS', 'TATHAWADE', '1, 2, 2.5 & 3 BHK', 'P52100027952']
+    ].map(([k, name, loc, config, rera]) => ({ slot: 'proj-' + k, img: 'assets/' + k + '-ext.jpg', name, loc, config, rera, status: 'COMPLETED · FAMILIES LIVING', href: '#projects', cta: 'COMPLETED ✓', placeholder: name.toUpperCase() + ' · COMPLETED PROJECT PHOTO' }));
+    const imgs = [
+      ['assets/living-dining.jpg', 'LIVING & DINING'], ['assets/bedroom-master.jpg', 'MASTER BEDROOM'], ['assets/pool.jpg', 'POOL DECK'],
+      ['assets/living.jpg', 'LIVING ROOM'], ['assets/foyer.jpg', 'FOYER'], ['assets/outdoor-gym.jpg', 'OUTDOOR GYM'],
+      ['assets/bedroom-kids.jpg', "KIDS' BEDROOM"], ['assets/play-area.jpg', "CHILDREN'S PLAY AREA"]
+    ];
+    const pos = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3], [3, 1], [3, 2]];
+    const gallery = imgs.map(([src, caption], i) => ({
+      src, caption, num: String(i + 1).padStart(2, '0'), row: pos[i][0], col: pos[i][1],
+      op: i === s.gal ? 1 : 0.88, ring: i === s.gal ? '#3A2A20' : 'transparent',
+      bigOp: i === s.gal ? 1 : 0, bigScale: i === s.gal ? 1 : 1.04,
+      pick: () => { if (this.state.gal !== i) this.setState({ gal: i }); }
+    }));
+    const why = [
+      ['01', 'Value-at-Quality construction', 'Good materials and careful engineering, priced honestly — so your home keeps its worth.'],
+      ['02', 'Strategic Pune locations', 'Bavdhan, Tathawade, Wakad and Sus — close to IT hubs, highways and good schools.'],
+      ['03', 'Distinguished architecture', 'Clean, modern elevations and plans with no wasted corners.'],
+      ['04', 'Transparent dealings', 'Clear pricing, MahaRERA-registered projects and paperwork you can read.'],
+      ['05', 'On-time delivery', 'Realistic timelines, regular site updates and keys handed over as promised.'],
+      ['06', 'Community living', 'Spaces and events that help neighbours become friends.']
+    ].map(([n, t, d]) => ({ n, t, d }));
+    const locs = {
+      bavdhan: { label: 'BAVDHAN · EH SKY TOWER', map: 'Bavdhan%2C%20Pune', places: [
+        ['TRAVEL', 'Mumbai–Pune Expressway', '5 KM'], ['TRAVEL', 'Vanaz Metro Station', '5 KM'], ['WORK', 'Kothrud', '4 KM'],
+        ['WORK', 'Baner', '8 KM'], ['WORK', 'Hinjewadi IT Park', '13 KM'], ['SCHOOLS', 'SNBP · Ryan International', '0.5–1 KM'],
+        ['HEALTH', 'Chellaram · Sahyadri Hospital', '3–5 KM'], ['SHOPPING', 'Central Mall · Phoenix Millennium', '8–12 KM'] ], note: 'DISTANCES AS PER EH SKY TOWER BROCHURE · APPROX.' },
+      tathawade: { label: 'TATHAWADE · EH TOWERS & IOS PRIME', map: 'Tathawade%2C%20Pune', places: [
+        ['TRAVEL', 'Mumbai–Bengaluru Highway', '1 KM'], ['WORK', 'Hinjewadi IT Park', '4 KM'], ['WORK', 'Wakad', '3 KM'],
+        ['TRAVEL', 'Mumbai–Pune Expressway', '6 KM'], ['WORK', 'Baner', '9 KM'], ['EVERYDAY', 'Schools & colleges', '1–2 KM'],
+        ['EVERYDAY', 'Hospitals', '3–4 KM'], ['EVERYDAY', 'Malls · Wakad', '4 KM'] ], note: 'APPROX. ROAD DISTANCES · INDICATIVE' }
+    };
+    const L = locs[s.loc];
+    const locTab = (k, label) => ({ label, bg: s.loc === k ? '#3A2A20' : 'transparent', fg: s.loc === k ? '#FBF5EC' : '#3A2A20', select: () => this.setState({ loc: k }) });
+    const quotes = [
+      { q: 'We visited six projects before this one. What sold us was how honest the team was about every detail — and the flat was handed over exactly as promised.', n: 'Ramesh', p: 'iOS · TATHAWADE · HOMEOWNER' },
+      { q: 'The rooms are planned so well that our furniture just fit. Three years on, the building still looks new.', n: 'Suresh', p: 'BONHEUR · WAKAD · HOMEOWNER' },
+      { q: 'Our kids have friends on every floor now. It feels like a neighbourhood, not just a building.', n: 'Mukesh', p: 'VIENTO · SUS · HOMEOWNER' }
+    ];
+    const posts = [
+      { t: "Moving In Soon? Why the 'Flat OC' is Your Ultimate Green Light", cat: 'BUYING GUIDE', date: 'OCT 2026', img: 'assets/living.jpg' },
+      { t: 'Emotional vs Logical Buying: What Drives Pune Homebuyers in 2026?', cat: 'INSIGHTS', date: 'SEP 2026', img: 'assets/bedroom-master.jpg' },
+      { t: 'Is Your Money Working? A Guide to Rental Yields in Pune (2026 Edition)', cat: 'INVESTING', date: 'AUG 2026', img: 'assets/ehtowers-ext.jpg' }
+    ];
+    return {
+      // Big title: on computers it shrinks only as far as needed to stay clear of the building cut-out
+      heroTextMax: desktop ? 'min(560px, max(30vw, 400px))' : '560px',
+      heroH1Size: desktop ? 'clamp(34px, 2.9vw, 48px)' : 'clamp(34px, 9.4vw, 48px)',
+      titleSize: desktop ? 'clamp(34px, min(8.4vw, calc(15.8vw - 9.8vh - 36px)), 200px)' : 'clamp(34px, 8.4vw, 200px)',
+      desktop, mobile: !desktop, aboutCols: desktop ? 'repeat(4,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))', heroBottom: desktop ? 'clamp(32px,6vh,56px)' : '84px',
+      tabs: [tab('ONGOING'), tab('COMPLETED')],
+      projects: (s.tab === 'ONGOING' ? ongoing : completed).map(p => ({ ...p, live: s.tab === 'ONGOING', done: s.tab !== 'ONGOING', price: s.tab === 'ONGOING' ? 'PRICE ON REQUEST' : 'FAMILIES LIVING', hasLogo: !!p.logo, noLogo: !p.logo, tileBg: p.logo ? '#2B1F18' : '#E3CFB4', tileFg: p.logo ? '#CDBBA6' : '#3A2A20' })),
+      gallery, galIndex: String(s.gal + 1).padStart(2, '0'), galCaption: imgs[s.gal][1],
+      prevG: () => this.setState(st => ({ gal: (st.gal + imgs.length - 1) % imgs.length })), nextG: () => this.setState(st => ({ gal: (st.gal + 1) % imgs.length })),
+      mapLink: 'https://www.google.com/maps/search/?api=1&query=' + L.map, mapPlace: s.loc === 'bavdhan' ? 'Bavdhan, Pune' : 'Tathawade, Pune',
+      why, whyMinH: desktop ? '220px' : '0',
+      locTabs: [locTab('bavdhan', 'BAVDHAN'), locTab('tathawade', 'TATHAWADE')],
+      places: L.places.map(([k, name, d]) => ({ k, name, d })), locLabel: L.label, locNote: L.note,
+      mapSrc: 'https://maps.google.com/maps?q=' + L.map + '&z=13&output=embed',
+      quote: quotes[s.q], quoteIdx: String(s.q + 1).padStart(2, '0'),
+      prevQ: () => this.setState(st => ({ q: (st.q + 2) % 3 })), nextQ: () => this.setState(st => ({ q: (st.q + 1) % 3 })),
+      posts
+    };
+  }
+}
+</script>
+</body>
+</html>

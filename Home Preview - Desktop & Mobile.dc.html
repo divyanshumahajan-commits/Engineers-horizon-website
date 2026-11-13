@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#E9E1D5}a{color:#3A2A20}a:hover{color:#A8643F}</style>
+</helmet>
+<section style="padding:64px;font-family:'Archivo',sans-serif;color:#3A2A20;">
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:40px;">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;">ENGINEERS HORIZON · WEBSITE</span>
+    <h1 style="margin:0;font-weight:800;font-size:56px;letter-spacing:-.045em;">Home page — desktop &amp; mobile</h1>
+    <p style="margin:0;font-size:16px;color:#6B5546;">Both frames are live and scrollable. Open any page directly:</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;">
+      <a href="Home.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">HOME</a>
+      <a href="EH%20Sky%20Tower.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">EH SKY TOWER</a>
+      <a href="About.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">ABOUT</a>
+      <a href="Contact.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">CONTACT</a>
+      <a href="Blog.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">BLOG</a>
+      <a href="Blog%20Article.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">ARTICLE</a>
+      <a href="Careers.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">CAREERS</a>
+      <a href="EH%20Connect.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">EH-CONNECT</a>
+      <a href="EH%20Privilege.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">EH-PRIVILEGE</a>
+      <a href="NRI%20Corner.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">NRI CORNER</a>
+      <a href="Events.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">EVENTS</a>
+      <a href="FAQ.dc.html" style="padding:8px 12px;border:1px solid #3A2A20;text-decoration:none;">FAQ</a>
+    </div>
+  </div>
+  <div style="display:flex;gap:64px;align-items:flex-start;">
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;">DESKTOP · 1440</span>
+      <iframe src="Home.dc.html" title="Desktop" style="width:1440px;height:900px;border:0;background:#FBF5EC;box-shadow:0 1px 0 rgba(58,42,32,.2);"></iframe>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;">MOBILE · 390</span>
+      <iframe src="Home.dc.html" title="Mobile" style="width:390px;height:844px;border:0;background:#FBF5EC;box-shadow:0 1px 0 rgba(58,42,32,.2);"></iframe>
+    </div>
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

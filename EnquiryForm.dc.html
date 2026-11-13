@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./eh-motion.js"></script>
+</helmet>
+<section id="enquire" style="background:#FBF5EC;padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);font-family:'Plus Jakarta Sans',sans-serif;color:#3A2A20;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(32px,5vw,80px);align-items:stretch;">
+    <div data-reveal="zoom" style="position:relative;min-height:420px;overflow:hidden;">
+      <img src="{{ image }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+      <div style="position:absolute;left:0;bottom:0;background:#FBF5EC;padding:16px 20px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;line-height:1.7;">SAMPLE FLAT · OPEN DAILY<br>10:00 AM – 7:00 PM</div>
+    </div>
+    <div style="display:flex;flex-direction:column;">
+      <div data-reveal="rise" style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>BOOK A SITE VISIT</div>
+      <h2 data-reveal="rise" style="margin:20px 0 14px;font-weight:700;font-size:clamp(34px,4.4vw,60px);line-height:.98;letter-spacing:-.025em;text-wrap:balance;">{{ heading }}</h2>
+      <p data-reveal="rise" style="margin:0 0 32px;font-size:16px;line-height:1.6;color:#6B5546;max-width:520px;text-wrap:pretty;">Tell us a little about what you're looking for. Our team will call you back within one working day to fix a time that suits you.</p>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="border:1px solid rgba(58,42,32,.2);padding:36px;display:flex;flex-direction:column;gap:12px;">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#A8643F;">REQUEST RECEIVED</div>
+          <div style="font-size:26px;font-weight:700;letter-spacing:-.02em;">Thank you, {{ firstName }}. We'll call you soon.</div>
+          <p style="margin:0;color:#6B5546;line-height:1.6;">Prefer to talk right away? Call or WhatsApp us on +91 84840 50579.</p>
+          <button onClick="{{ reset }}" style="align-self:flex-start;margin-top:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;background:transparent;border:1px solid #3A2A20;color:#3A2A20;padding:0 18px;height:44px;cursor:pointer;">SEND ANOTHER</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:0 28px;">
+          <input name="company" tabIndex="-1" autoComplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;opacity:0;">
+          <label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">FULL NAME *</span>
+            <input required name="name" value="{{ name }}" onChange="{{ onName }}" placeholder="Your name" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">PHONE *</span>
+            <input required type="tel" name="phone" placeholder="+91" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">EMAIL</span>
+            <input type="email" name="email" placeholder="you@email.com" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">INTERESTED PROJECT</span>
+            <select name="project" defaultValue="{{ defaultProject }}" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;">
+              <option>EH Sky Tower — Bavdhan</option>
+              <option>EH Towers — Tathawade</option>
+              <option>IOS Prime — Tathawade</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">BUDGET</span>
+            <select name="budget" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;">
+              <option>Under ₹75 L</option>
+              <option>₹75 L – ₹1 Cr</option>
+              <option>₹1 Cr – ₹1.5 Cr</option>
+              <option>₹1.5 Cr – ₹2.5 Cr</option>
+              <option>Above ₹2.5 Cr</option>
+            </select>
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">PREFERRED VISIT DATE</span>
+            <input type="date" name="date" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;">
+          </label>
+          <div style="grid-column:1/-1;padding:22px 0 6px;display:flex;flex-direction:column;gap:12px;">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">YOU MAY CONTACT ME BY</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <sc-for list="{{ channels }}" as="c" hint-placeholder-count="4">
+                <button type="button" onClick="{{ c.toggle }}" style="height:44px;padding:0 16px;display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;cursor:pointer;background:{{ c.bg }};color:{{ c.fg }};border:1px solid #3A2A20;"><span style="width:10px;height:10px;border:1px solid {{ c.fg }};background:{{ c.dot }};"></span>{{ c.label }}</button>
+              </sc-for>
+            </div>
+            <p style="margin:4px 0 0;font-size:13px;line-height:1.55;color:#6B5546;max-width:560px;">I agree to be contacted by Engineers Horizon about my enquiry. This overrides any DND/NDNC registration. Your details are never shared.</p>
+          </div>
+          <div style="grid-column:1/-1;padding-top:18px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;">
+            <button type="submit" disabled="{{ sending }}" style="height:52px;display:flex;align-items:stretch;border:0;padding:0;cursor:pointer;opacity:{{ btnOpacity }};background:#3A2A20;color:#FBF5EC;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;" style-hover="background:#A8643F;">
+              <span style="display:flex;align-items:center;padding:0 24px;">{{ btnLabel }}</span>
+              <span style="display:flex;align-items:center;padding:0 16px;border-left:1px solid rgba(251,245,236,.3);">»</span>
+            </button>
+            <sc-if value="{{ failed }}" hint-placeholder-val="{{ false }}">
+              <p role="alert" style="flex-basis:100%;order:-1;margin:0;padding:12px 14px;border:1px solid #A8643F;color:#7A3F1F;background:#F6E7DA;font-size:14px;line-height:1.5;">{{ errorText }}</p>
+            </sc-if>
+            <a href="https://wa.me/918484050579" style="display:inline-block;padding:10px 0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#3A2A20;">OR WHATSAPP US →</a>
+          </div>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1440px&quot;,&quot;height&quot;:&quot;820px&quot;},&quot;image&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;assets/living-dining.jpg&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;heading&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Come see it for yourself.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;defaultProject&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;EH Sky Tower — Bavdhan&quot;,&quot;EH Towers — Tathawade&quot;,&quot;IOS Prime — Tathawade&quot;,&quot;Not sure yet&quot;],&quot;default&quot;:&quot;EH Sky Tower — Bavdhan&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  // Supabase project "Engineers Horizon Website" (Mumbai region). This publishable key is meant to be public:
+  // the leads table only lets website visitors ADD a lead. Leads can't be read, changed or deleted from the website.
+  static SUPABASE_URL = 'https://xbcsbbqxjkkglcmrtlir.supabase.co';
+  static SUPABASE_KEY = 'sb_publishable_pVofwuWkANlxXU3L8mB90Q_GQOo1gAX';
+
+  state = { sent: false, sending: false, failed: false, errorText: '', name: '', ch: { CALL: true, WHATSAPP: true, SMS: false, EMAIL: false } };
+
+  // Remember ad-campaign tags (utm_source, utm_medium, utm_campaign) from the page the visitor landed on.
+  utm() {
+    const keys = ['utm_source', 'utm_medium', 'utm_campaign'];
+    let saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem('eh_utm') || '{}'); } catch (e) {}
+    try {
+      const q = new URLSearchParams(location.search);
+      if (keys.some(k => q.get(k))) {
+        saved = {};
+        keys.forEach(k => { if (q.get(k)) saved[k] = q.get(k).slice(0, 200); });
+        sessionStorage.setItem('eh_utm', JSON.stringify(saved));
+      }
+    } catch (e) {}
+    return saved;
+  }
+
+  async saveLead(form) {
+    const f = new FormData(form);
+    if ((f.get('company') || '').toString().trim()) { this.setState({ sent: true }); return; } // spam bot: pretend it worked, save nothing
+    const val = k => { const v = (f.get(k) || '').toString().trim(); return v === '' ? null : v; };
+    const phone = (val('phone') || '').replace(/[^0-9+() -]/g, '');
+    if (phone.replace(/\D/g, '').length < 10) {
+      this.setState({ failed: true, errorText: 'Please enter a valid phone number (at least 10 digits) so our team can call you back.' });
+      return;
+    }
+    const ch = this.state.ch;
+    let page = 'Home';
+    try { page = decodeURIComponent(location.pathname.split('/').pop() || 'Home').replace('.dc.html', '').replace('.html', '') || 'Home'; } catch (e) {}
+    const lead = {
+      full_name: (val('name') || '').slice(0, 120),
+      phone: phone.slice(0, 20),
+      email: val('email'),
+      project: val('project'),
+      budget: val('budget'),
+      preferred_visit_date: val('date'),
+      contact_methods: Object.keys(ch).filter(k => ch[k]),
+      consent: true,
+      source_page: page.slice(0, 200),
+      ...this.utm()
+    };
+    this.setState({ sending: true, failed: false });
+    try {
+      const res = await fetch(Component.SUPABASE_URL + '/rest/v1/leads', {
+        method: 'POST',
+        headers: { 'apikey': Component.SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+        body: JSON.stringify(lead)
+      });
+      if (!res.ok) throw new Error('Save failed: ' + res.status);
+      this.setState({ sending: false, sent: true });
+    } catch (err) {
+      // Inside the Claude design preview the page runs in a locked-down frame that blocks outside connections,
+      // so the request never leaves the browser. Say so plainly there; on the real website show the normal message.
+      let inPreview = false;
+      try { inPreview = window.__omEditor === 1 || window.parent !== window; } catch (e) { inPreview = true; }
+      const blocked = err instanceof TypeError;
+      this.setState({ sending: false, failed: true, errorText: inPreview && blocked
+        ? 'Design preview only: this preview blocks connections to outside services, so this test enquiry was not sent. On the live website (Netlify or your localhost) enquiries are saved to Supabase.'
+        : "Sorry, we couldn't send your details just now. Please check your internet and try again, or WhatsApp us on +91 84840 50579." });
+    }
+  }
+
+  renderVals() {
+    const ch = this.state.ch;
+    const channels = Object.keys(ch).map(k => ({
+      label: k, bg: ch[k] ? '#3A2A20' : 'transparent', fg: ch[k] ? '#FBF5EC' : '#3A2A20', dot: ch[k] ? '#FBF5EC' : 'transparent',
+      toggle: () => this.setState(s => ({ ch: { ...s.ch, [k]: !s.ch[k] } }))
+    }));
+    return {
+      image: this.props.image ?? 'assets/living-dining.jpg',
+      heading: this.props.heading ?? 'Come see it for yourself.',
+      defaultProject: this.props.defaultProject ?? 'EH Sky Tower — Bavdhan',
+      sent: this.state.sent, notSent: !this.state.sent, name: this.state.name,
+      firstName: (this.state.name || 'there').trim().split(' ')[0] || 'there',
+      onName: e => this.setState({ name: e.target.value }),
+      channels,
+      sending: this.state.sending,
+      btnLabel: this.state.sending ? 'SENDING…' : 'BOOK A SITE VISIT',
+      btnOpacity: this.state.sending ? 0.7 : 1,
+      failed: this.state.failed, errorText: this.state.errorText,
+      submit: e => { e.preventDefault(); if (!this.state.sending) this.saveLead(e.currentTarget || e.target); },
+      reset: () => this.setState({ sent: false, failed: false, name: '' })
+    };
+  }
+}
+</script>
+</body>
+</html>

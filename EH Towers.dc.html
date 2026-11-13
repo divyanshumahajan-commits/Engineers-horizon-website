@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>EH Towers, Tathawade — 2 &amp; 3 BHK | Engineers Horizon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./eh-motion.js"></script>
+<script src="./eh-maps.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBF5EC;color:#3A2A20;-webkit-font-smoothing:antialiased}
+a{color:#3A2A20}
+a:hover{color:#A8643F}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="font-family:'Plus Jakarta Sans',sans-serif;color:#3A2A20;background:#FBF5EC;overflow-x:hidden;">
+
+<section data-screen-label="EH Towers · Hero" style="position:relative;height:max(100vh,640px);overflow:hidden;background:#C7A98A;">
+  <div style="position:absolute;inset:0;"><img data-reveal="zoom" data-load="" src="assets/ehtowers-ext.jpg" alt="EH Towers" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,31,24,.28) 0%,rgba(43,31,24,.05) 24%,rgba(43,31,24,.16) 40%,rgba(43,31,24,.66) 100%);pointer-events:none;"></div>
+  <dc-import name="SiteHeader" variant="overlay" active="PROJECTS" hint-size="100%,76px"></dc-import>
+  <div data-reveal="rise-lg" data-load="" style="position:absolute;left:0;right:0;top:clamp(110px,15vh,150px);text-align:center;pointer-events:none;">
+    <div style="font-weight:800;font-size:clamp(60px,14.5vw,250px);line-height:.8;letter-spacing:-.055em;color:#fff;white-space:nowrap;">EH TOWERS</div>
+  </div>
+  <div style="position:absolute;left:clamp(18px,3.5vw,56px);right:clamp(18px,3.5vw,56px);bottom:clamp(28px,5vh,48px);z-index:3;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;">
+    <div style="display:flex;flex-direction:column;gap:22px;">
+      <img data-reveal="rise" data-load="" data-delay="200" src="assets/ehtowers-logo.png" alt="EH Towers" style="width:84px;height:auto;display:block;">
+      <h1 data-reveal="rise" data-load="" data-delay="300" style="margin:0;font-weight:800;font-size:clamp(32px,4vw,60px);line-height:.92;letter-spacing:-.03em;color:#fff;text-transform:uppercase;">The flagship<br>life.</h1>
+      <div data-reveal="rise" data-load="" data-delay="450" style="display:flex;flex-wrap:wrap;gap:10px;">
+        <a href="#enquire" style="display:flex;height:46px;background:#fff;color:#3A2A20;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#3A2A20;color:#fff;"><span style="display:flex;align-items:center;padding:0 20px;">BOOK A SITE VISIT</span><span style="display:flex;align-items:center;padding:0 15px;border-left:1px solid rgba(58,42,32,.2);">»</span></a>
+        <a href="assets/brochure-eh-towers.pdf" target="_blank" style="display:flex;align-items:center;height:46px;padding:0 20px;border:1px solid #fff;color:#fff;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">DOWNLOAD BROCHURE ↓</a>
+      </div>
+    </div>
+    <p data-reveal="fade" data-load="" data-delay="700" style="margin:0;max-width:320px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;line-height:1.6;letter-spacing:.06em;color:#fff;text-transform:uppercase;">2 &amp; 3 BHK homes in Jeevan Nagar, Tathawade · minutes from Hinjewadi.</p>
+  </div>
+</section>
+
+<section data-screen-label="EH Towers · Key facts" style="border-bottom:1px solid rgba(58,42,32,.16);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(50%,190px),1fr));">
+    <sc-for list="{{ facts }}" as="f" hint-placeholder-count="6">
+      <div style="padding:26px clamp(18px,2vw,28px);border-right:1px solid rgba(58,42,32,.16);border-top:1px solid rgba(58,42,32,.16);display:flex;flex-direction:column;gap:10px;">
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">{{ f.k }}</span>
+        <span style="font-weight:700;font-size:19px;letter-spacing:-.02em;line-height:1.15;">{{ f.v }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="EH Towers · Overview" style="padding:clamp(64px,9vw,130px) clamp(18px,3.5vw,56px);">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(40px,6vw,96px);align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div data-reveal="rise" style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>OVERVIEW</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(34px,4vw,58px);line-height:.98;letter-spacing:-.03em;">Our flagship.<br>Built for every day.</h2>
+      <p data-reveal="rise" style="margin:0;font-size:clamp(18px,1.5vw,21px);line-height:1.5;text-wrap:pretty;">EH Towers brings the Engineers Horizon standard to Jeevan Nagar, Tathawade — a well-connected pocket close to Hinjewadi, Wakad and the Mumbai–Bengaluru Highway. Spacious 2 and 3 BHK homes, planned for growing families and busy weekdays.</p>
+      <p data-reveal="rise" style="margin:0;font-size:16px;line-height:1.6;color:#6B5546;text-wrap:pretty;">Efficient layouts with no wasted passages, good cross-ventilation and honest finishes — homes that keep their value for years.</p>
+    </div>
+    <div data-reveal="zoom" style="aspect-ratio:4/5;position:relative;"><img src="assets/living-dining.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;"></div>
+  </div>
+</section>
+
+<section id="plans" data-screen-label="EH Towers · Floor plans" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);background:#F3E9DA;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:32px;border-bottom:1px solid rgba(58,42,32,.16);">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>FLOOR PLANS</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">Pick your layout</h2>
+    </div>
+    <div style="display:flex;border:1px solid #3A2A20;">
+      <sc-for list="{{ planTabs }}" as="t" hint-placeholder-count="2">
+        <button onClick="{{ t.select }}" style="height:46px;padding:0 22px;border:0;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;background:{{ t.bg }};color:{{ t.fg }};">{{ t.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,64px);padding-top:40px;">
+    <div style="aspect-ratio:4/3;position:relative;background:#FBF5EC;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:clamp(24px,3vw,40px);border:1px solid rgba(58,42,32,.16);overflow:hidden;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">UNIT PLAN · {{ plan.name }}</span>
+      <div style="font-weight:800;font-size:clamp(80px,12vw,190px);letter-spacing:-.06em;line-height:.8;color:#E6D6BF;">{{ plan.name }}</div>
+      <div style="display:flex;flex-direction:column;gap:14px;max-width:420px;">
+        <p style="margin:0;font-size:15px;line-height:1.55;color:#6B5546;">Dimensioned unit plans, room sizes and area statements are inside the project brochure.</p>
+        <a href="assets/brochure-eh-towers.pdf" target="_blank" style="align-self:flex-start;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;text-decoration:none;border-bottom:1px solid #3A2A20;padding-bottom:4px;">VIEW {{ plan.name }} PLANS IN BROCHURE ↓</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div style="font-weight:700;font-size:clamp(48px,6vw,88px);letter-spacing:-.05em;line-height:.9;">{{ plan.name }}</div>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ plan.rows }}" as="r" hint-placeholder-count="5">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.16);">
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.12em;color:#6B5546;">{{ r.k }}</span>
+            <span style="font-weight:600;font-size:16px;text-align:right;">{{ r.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <a href="#enquire" style="display:flex;align-items:center;height:46px;padding:0 20px;background:#3A2A20;color:#FBF5EC;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#A8643F;color:#FBF5EC;">{{ plan.cta }}</a>
+        <a href="assets/brochure-eh-towers.pdf" target="_blank" style="display:flex;align-items:center;height:46px;padding:0 20px;border:1px solid #3A2A20;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;">DOWNLOAD PLAN ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="amenities" data-screen-label="EH Towers · Amenities" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>AMENITIES</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">Everyday, made easy</h2>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(50%,240px),1fr));border-top:1px solid rgba(58,42,32,.2);border-left:1px solid rgba(58,42,32,.2);">
+    <sc-for list="{{ amenities }}" as="a" hint-placeholder-count="8">
+      <div style="padding:clamp(16px,4vw,26px) clamp(14px,3.6vw,24px);border-right:1px solid rgba(58,42,32,.2);border-bottom:1px solid rgba(58,42,32,.2);display:flex;flex-direction:column;gap:clamp(12px,3vw,30px);min-height:clamp(108px,26vw,150px);">
+        <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#A8643F;">{{ a.n }}</span>
+        <span style="margin-top:auto;font-weight:700;font-size:clamp(16px,4.2vw,20px);letter-spacing:-.02em;line-height:1.15;">{{ a.t }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="EH Towers · Specifications" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);background:#F3E9DA;">
+  <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>SPECIFICATIONS</div>
+  <h2 data-reveal="rise" style="margin:20px 0 40px;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">What goes into your home</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:0 32px;border-top:1px solid rgba(58,42,32,.2);">
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">FLOORING</span><span style="font-size:16px;line-height:1.5;">GVT tiles in living & bedrooms, anti-skid GVT on balconies</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">KITCHEN</span><span style="font-size:16px;line-height:1.5;">Premium granite or quartz countertop</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">WALLS</span><span style="font-size:16px;line-height:1.5;">AAC blockwork for strength and insulation</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">WASHROOMS</span><span style="font-size:16px;line-height:1.5;">Anti-skid flooring, SS sanitary and premium CP fittings</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">ELECTRICAL</span><span style="font-size:16px;line-height:1.5;">Polycab wiring, Schneider switches</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">AUTOMATION</span><span style="font-size:16px;line-height:1.5;">Touchscreen hybrid intercom, Hik-Connect doorbell</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">WINDOWS</span><span style="font-size:16px;line-height:1.5;">3-track aluminium sliders with mosquito mesh</span></div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding:22px 0;border-bottom:1px solid rgba(58,42,32,.2);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#A8643F;">LIFTS</span><span style="font-size:16px;line-height:1.5;">IS-compliant, high-efficiency elevators</span></div>
+  </div>
+</section>
+
+<section data-screen-label="EH Towers · Gallery" style="padding:0 clamp(18px,3.5vw,56px) clamp(56px,8vw,120px);">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;margin-bottom:36px;padding-top:40px;border-top:1px solid rgba(58,42,32,.16);">
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>INSIDE AN EH HOME</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">Lifestyle gallery</h2>
+    </div>
+    <p style="margin:0;max-width:420px;font-size:14px;line-height:1.6;color:#6B5546;">Interiors from our furnished sample flat. Representative of the finish quality — furniture and décor are not part of the offering.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;">
+    <div style="position:relative;aspect-ratio:3/2;overflow:hidden;background:#E6D6BF;grid-column:1/-1;max-height:72vh;">
+      <sc-for list="{{ gal }}" as="g" hint-placeholder-count="1">
+        <img src="{{ g.src }}" alt="{{ g.caption }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ g.bigOp }};transition:opacity .9s ease;">
+      </sc-for>
+      <div style="position:absolute;left:0;bottom:0;background:#FBF5EC;padding:12px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;">{{ galCaption }}</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:12px;">
+    <sc-for list="{{ gal }}" as="g" hint-placeholder-count="5">
+      <button onMouseEnter="{{ g.pick }}" onClick="{{ g.pick }}" style="padding:0;border:0;cursor:pointer;aspect-ratio:1/1;overflow:hidden;outline:1px solid {{ g.ring }};outline-offset:3px;background:#E6D6BF;"><img src="{{ g.src }}" alt="{{ g.caption }}" style="width:100%;height:100%;object-fit:cover;display:block;"></button>
+    </sc-for>
+  </div>
+</section>
+
+<section id="location" data-screen-label="EH Towers · Location" style="padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);background:#F3E9DA;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(32px,5vw,72px);">
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;"><span style="width:9px;height:9px;border:1px solid #3A2A20;"></span>LOCATION</div>
+      <h2 data-reveal="rise" style="margin:0;font-weight:700;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.03em;">S. No. 157/2A/2,<br>Tathawade, Pune 411033</h2>
+      <div style="display:flex;flex-direction:column;">
+        <sc-for list="{{ places }}" as="pl" hint-placeholder-count="7">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.16);">
+            <span style="font-size:17px;font-weight:500;">{{ pl.name }}</span>
+            <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.06em;white-space:nowrap;">{{ pl.d }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin:0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.1em;color:#8A7262;">APPROX. ROAD DISTANCES · INDICATIVE, TO BE VERIFIED</p>
+    </div>
+    <div style="position:relative;min-height:480px;overflow:hidden;background:#E6D6BF;">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Jeevan+Nagar+Tathawade+Pune" target="_blank" rel="noopener" aria-label="Open EH Towers' location in Google Maps" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;text-decoration:none;color:#3A2A20;background-color:#E6D6BF;background-image:linear-gradient(rgba(58,42,32,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(58,42,32,.07) 1px,transparent 1px),linear-gradient(28deg,transparent 47%,rgba(251,245,236,.85) 47%,rgba(251,245,236,.85) 53%,transparent 53%),linear-gradient(118deg,transparent 48.5%,rgba(251,245,236,.7) 48.5%,rgba(251,245,236,.7) 51.5%,transparent 51.5%);background-size:48px 48px,48px 48px,100% 100%,100% 100%;"><span style="width:26px;height:26px;background:#A8643F;border:3px solid #FBF5EC;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 8px 18px rgba(58,42,32,.28);"></span><span style="font-weight:800;font-size:clamp(22px,3vw,34px);line-height:1;letter-spacing:-.03em;text-transform:uppercase;">Tathawade, Pune</span><span style="font-size:14px;color:#6B5546;">EH Towers · Jeevan Nagar</span><span style="background:#3A2A20;color:#FBF5EC;padding:13px 18px;font-weight:600;font-size:10px;letter-spacing:.14em;">OPEN IN GOOGLE MAPS →</span></a>
+      <iframe data-eh-map="" title="EH Towers location" src="https://maps.google.com/maps?q=Jeevan%20Nagar%2C%20Tathawade%2C%20Pune&amp;z=14&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) sepia(.35) contrast(.92);"></iframe>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Jeevan+Nagar+Tathawade+Pune" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;background:#3A2A20;color:#FBF5EC;padding:13px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;text-decoration:none;">GET DIRECTIONS →</a>
+    </div>
+  </div>
+</section>
+
+<section id="brochure" data-screen-label="EH Towers · Price & brochure" style="padding:clamp(56px,7vw,100px) clamp(18px,3.5vw,56px);background:#3A2A20;color:#FBF5EC;">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:32px;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;color:#CDBBA6;">2 &amp; 3 BHK · EH TOWERS · MAHARERA P52100079038</span>
+      <div style="font-weight:800;font-size:clamp(38px,5vw,76px);line-height:.92;letter-spacing:-.05em;">PRICE ON REQUEST</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <a href="#enquire" style="display:flex;align-items:center;height:52px;padding:0 24px;background:#FBF5EC;color:#3A2A20;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#E3B48F;color:#3A2A20;">REQUEST PRICE SHEET</a>
+      <a href="assets/rera-eh-towers.pdf" target="_blank" style="display:flex;align-items:center;height:52px;padding:0 24px;border:1px solid rgba(251,245,236,.5);color:#FBF5EC;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#FBF5EC;color:#3A2A20;">MAHARERA CERTIFICATE ↓</a>
+      <a href="assets/brochure-eh-towers.pdf" target="_blank" style="display:flex;align-items:center;height:52px;padding:0 24px;border:1px solid rgba(251,245,236,.5);color:#FBF5EC;text-decoration:none;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:11px;letter-spacing:.14em;" style-hover="background:#FBF5EC;color:#3A2A20;">DOWNLOAD BROCHURE ↓</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="EnquiryForm" heading="Visit EH Towers." default-project="EH Towers — Tathawade" image="assets/foyer.jpg" hint-size="100%,820px"></dc-import>
+<dc-import name="SiteFooter" hint-size="100%,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { plan: '3', g: 0 };
+  renderVals() {
+    const s = this.state;
+    const facts = [["LOCATION","Jeevan Nagar, Tathawade"],["CONFIGURATIONS","2 & 3 BHK"],["CARPET AREA","746 – 1,065 sq.ft"],["STATUS","Under construction"],["POSSESSION","Dec 2028 (MahaRERA)"],["MAHARERA NO.","P52100079038"]].map(([k, v]) => ({ k, v }));
+    const plans = {
+      '3': { name: '2 BHK', rows: [['CARPET AREA (RERA)', '746 – 776 sq.ft'], ['LAYOUTS', '3 types · 746, 759, 776 sq.ft'], ['FLOORING', 'GVT tiles'], ['WINDOWS', '3-track aluminium with mesh'], ['MAIN DOOR', 'Laminate with digital lock']] },
+      '4': { name: '3 BHK', rows: [['CARPET AREA (RERA)', '985 – 1,065 sq.ft'], ['LAYOUTS', '3 types · 985, 1,008, 1,065 sq.ft'], ['FLOORING', 'GVT tiles'], ['WINDOWS', '3-track aluminium with mesh'], ['MAIN DOOR', 'Laminate with digital lock']] }
+    };
+    const P = { ...plans[s.plan], cta: 'GET PRICE FOR ' + plans[s.plan].name, rows: plans[s.plan].rows.map(([k, v]) => ({ k, v })) };
+    const tab = (k, label) => ({ label, bg: s.plan === k ? '#3A2A20' : 'transparent', fg: s.plan === k ? '#FBF5EC' : '#3A2A20', select: () => this.setState({ plan: k }) });
+    const amenities = ['Rooftop swimming pool', 'Wooden pool deck', 'Baby pool', 'Party lawn with bar counter', 'Dance area', 'Open gym', "Children's play area", 'Yoga & meditation area', 'Acupressure track', 'Star-gazing area', 'Amphitheatre', "Senior citizens' area", 'Buffet area with pergola', 'Feature wall with fountain', 'Connecting bridge', 'Shower & changing area']
+      .map((t, i) => ({ t, n: String(i + 1).padStart(2, '0') }));
+    const imgs = [['assets/living-dining.jpg', 'LIVING & DINING · SAMPLE FLAT'], ['assets/bedroom-master.jpg', 'MASTER BEDROOM · SAMPLE FLAT'], ['assets/living.jpg', 'LIVING ROOM · SAMPLE FLAT'], ['assets/foyer.jpg', 'FOYER · SAMPLE FLAT'], ['assets/bedroom-kids.jpg', "KIDS' BEDROOM · SAMPLE FLAT"]];
+    const gal = imgs.map(([src, caption], i) => ({ src, caption, bigOp: i === s.g ? 1 : 0, ring: i === s.g ? '#3A2A20' : 'transparent', pick: () => { if (this.state.g !== i) this.setState({ g: i }); } }));
+    const places = [["Mumbai–Bengaluru Highway","1 KM"],["Hinjewadi IT Park","4 KM"],["Wakad","3 KM"],["Mumbai–Pune Expressway","6 KM"],["Baner","9 KM"],["Schools & colleges","1–2 KM"],["Hospitals","3–4 KM"],["Malls · Wakad","4 KM"]].map(([name, d]) => ({ name, d }));
+    return { facts, planTabs: [tab('3', '2 BHK'), tab('4', '3 BHK')], plan: P, is3: s.plan === '3', is4: s.plan === '4', amenities, gal, galCaption: imgs[s.g][1], places };
+  }
+}
+</script>
+</body>
+</html>
