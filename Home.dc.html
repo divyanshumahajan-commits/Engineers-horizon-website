@@ -32,11 +32,11 @@ a:hover{color:#A8643F}
   </div>
   <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,31,24,.28) 0%,rgba(43,31,24,.05) 24%,rgba(43,31,24,.16) 40%,rgba(43,31,24,.66) 100%);pointer-events:none;"></div>
   <dc-import name="SiteHeader" variant="overlay" active="HOME" hint-size="100%,76px"></dc-import>
-  <div data-reveal="rise-lg" data-load="" style="position:absolute;left:0;right:0;top:clamp(116px,17vh,180px);text-align:center;pointer-events:none;">
-    <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;line-height:.8;letter-spacing:-.025em;color:#fff;font-size:{{ titleSize }};white-space:nowrap;" data-om-label="Engineer">ENGINEERS HORIZON</div>
+  <div data-reveal="rise-lg" data-load="" style="position:absolute;left:0;right:0;top:{{ titleTop }};text-align:{{ titleAlign }};padding:0 {{ titlePad }};pointer-events:none;">
+    <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;line-height:{{ titleLH }};letter-spacing:-.025em;color:#fff;font-size:{{ titleSize }};white-space:{{ titleWrap }};max-width:{{ titleMax }};margin:{{ titleMargin }};" data-om-label="Engineer">ENGINEERS HORIZON</div>
   </div>
   <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
-    <img data-reveal="zoom" data-load="" src="assets/skytower-hero-cutout.png" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; z-index: 2; pointer-events: none; top: -5px; left: 2px">
+    <img data-reveal="zoom" data-load="" src="assets/skytower-hero-cutout.webp" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; z-index: 2; pointer-events: none; top: -5px; left: 2px">
   </sc-if>
   <div style="position:absolute;left:clamp(18px,3.5vw,56px);right:clamp(18px,3.5vw,56px);bottom:{{ heroBottom }};z-index:3;display:grid;grid-template-columns:minmax(0,1fr);align-items:end;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.3);color:#fff;">
     <div style="display:flex;flex-direction:column;align-items:flex-start;gap:24px;">
@@ -157,15 +157,17 @@ a:hover{color:#A8643F}
   <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
     <div style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(16px,1.6vw,24px);align-items:stretch;">
       <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:clamp(10px,1vw,16px);">
-        <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="8">
+        <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="6">
           <button onMouseEnter="{{ g.pick }}" onFocus="{{ g.pick }}" onClick="{{ g.pick }}" title="{{ g.caption }}" style="grid-row:{{ g.row }};grid-column:{{ g.col }};aspect-ratio:1/1.1;padding:0;border:0;cursor:pointer;background:#E6D6BF;overflow:hidden;position:relative;outline:1px solid {{ g.ring }};outline-offset:3px;">
             <img src="{{ g.src }}" alt="{{ g.caption }}" style="width:100%;height:100%;object-fit:cover;display:block;opacity:{{ g.op }};transition:opacity .4s;">
           </button>
         </sc-for>
-        <div style="grid-row:3;grid-column:3;aspect-ratio:1/1.1;background:#3A2A20;color:#FBF5EC;padding:clamp(14px,1.4vw,20px);display:flex;flex-direction:column;justify-content:space-between;font-family:'Plus Jakarta Sans',sans-serif;">
-          <span style="font-weight:600;font-size:10px;letter-spacing:.14em;color:#CDBBA6;">{{ galIndex }} / 08</span>
-          <span style="font-weight:700;font-size:clamp(15px,1.4vw,20px);line-height:1.15;letter-spacing:-.01em;">{{ galCaption }}</span>
-          <div style="display:flex;gap:8px;">
+        <div style="grid-row:3;grid-column:1 / -1;background:#3A2A20;color:#FBF5EC;padding:clamp(16px,1.8vw,28px);display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:'Plus Jakarta Sans',sans-serif;">
+          <div style="display:flex;flex-direction:column;gap:10px;min-width:0;">
+            <span style="font-weight:600;font-size:10px;letter-spacing:.14em;color:#CDBBA6;">{{ galCounter }}</span>
+            <span style="font-weight:700;font-size:clamp(18px,1.8vw,28px);line-height:1.1;letter-spacing:-.01em;">{{ galCaption }}</span>
+          </div>
+          <div style="display:flex;gap:8px;flex:0 0 auto;width:clamp(120px,11vw,160px);">
             <button onClick="{{ prevG }}" aria-label="Previous photo" style="flex:1;padding:9px 0;background:transparent;color:#FBF5EC;border:1px solid rgba(251,245,236,.4);cursor:pointer;font-size:14px;">←</button>
             <button onClick="{{ nextG }}" aria-label="Next photo" style="flex:1;padding:9px 0;background:transparent;color:#FBF5EC;border:1px solid rgba(251,245,236,.4);cursor:pointer;font-size:14px;">→</button>
           </div>
@@ -328,11 +330,11 @@ class Component extends DCLogic {
       ['bonheur', 'Bonheur', 'WAKAD', '1, 2 & 3 BHK', 'P52100026648 · WING A P52100032282'], ['ios', 'iOS', 'TATHAWADE', '1, 2, 2.5 & 3 BHK', 'P52100027952']
     ].map(([k, name, loc, config, rera]) => ({ slot: 'proj-' + k, img: 'assets/' + k + '-ext.jpg', name, loc, config, rera, status: 'COMPLETED · FAMILIES LIVING', href: '#projects', cta: 'COMPLETED ✓', placeholder: name.toUpperCase() + ' · COMPLETED PROJECT PHOTO' }));
     const imgs = [
-      ['assets/living-dining.jpg', 'LIVING & DINING'], ['assets/bedroom-master.jpg', 'MASTER BEDROOM'], ['assets/pool.jpg', 'POOL DECK'],
-      ['assets/living.jpg', 'LIVING ROOM'], ['assets/foyer.jpg', 'FOYER'], ['assets/outdoor-gym.jpg', 'OUTDOOR GYM'],
-      ['assets/bedroom-kids.jpg', "KIDS' BEDROOM"], ['assets/play-area.jpg', "CHILDREN'S PLAY AREA"]
+      // Labels match what each photo shows (some file names don't match their photo)
+      ['assets/living-dining.jpg', "KIDS' BEDROOM"], ['assets/bedroom-master.jpg', 'LIVING ROOM'], ['assets/pool.jpg', 'POOL DECK'],
+      ['assets/living.jpg', 'MASTER BEDROOM'], ['assets/foyer.jpg', 'FOYER'], ['assets/bedroom-kids.jpg', 'LIVING & DINING']
     ];
-    const pos = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3], [3, 1], [3, 2]];
+    const pos = [[1, 1], [1, 2], [1, 3], [2, 1], [2, 2], [2, 3]];
     const gallery = imgs.map(([src, caption], i) => ({
       src, caption, num: String(i + 1).padStart(2, '0'), row: pos[i][0], col: pos[i][1],
       op: i === s.gal ? 1 : 0.88, ring: i === s.gal ? '#3A2A20' : 'transparent',
@@ -360,9 +362,9 @@ class Component extends DCLogic {
     const L = locs[s.loc];
     const locTab = (k, label) => ({ label, bg: s.loc === k ? '#3A2A20' : 'transparent', fg: s.loc === k ? '#FBF5EC' : '#3A2A20', select: () => this.setState({ loc: k }) });
     const quotes = [
-      { q: 'We visited six projects before this one. What sold us was how honest the team was about every detail — and the flat was handed over exactly as promised.', n: 'Ramesh', p: 'iOS · TATHAWADE · HOMEOWNER' },
-      { q: 'The rooms are planned so well that our furniture just fit. Three years on, the building still looks new.', n: 'Suresh', p: 'BONHEUR · WAKAD · HOMEOWNER' },
-      { q: 'Our kids have friends on every floor now. It feels like a neighbourhood, not just a building.', n: 'Mukesh', p: 'VIENTO · SUS · HOMEOWNER' }
+      { q: 'We visited six projects before this one. What sold us was how honest the team was about every detail — and the flat was handed over exactly as promised.', n: 'Mahesh', p: 'iOS · TATHAWADE · HOMEOWNER' },
+      { q: 'The rooms are planned so well that our furniture just fit. Three years on, the building still looks new.', n: 'Ajay', p: 'BONHEUR · WAKAD · HOMEOWNER' },
+      { q: 'Our kids have friends on every floor now. It feels like a neighbourhood, not just a building.', n: 'Divyanshu', p: 'VIENTO · SUS · HOMEOWNER' }
     ];
     const posts = [
       { t: "Moving In Soon? Why the 'Flat OC' is Your Ultimate Green Light", cat: 'BUYING GUIDE', date: 'OCT 2026', img: 'assets/living.jpg' },
@@ -373,11 +375,15 @@ class Component extends DCLogic {
       // Big title: on computers it shrinks only as far as needed to stay clear of the building cut-out
       heroTextMax: desktop ? 'min(560px, max(30vw, 400px))' : '560px',
       heroH1Size: desktop ? 'clamp(34px, 2.9vw, 48px)' : 'clamp(34px, 9.4vw, 48px)',
-      titleSize: desktop ? 'clamp(34px, min(8.4vw, calc(15.8vw - 9.8vh - 36px)), 200px)' : 'clamp(34px, 8.4vw, 200px)',
+      titleSize: desktop ? 'clamp(34px, min(8.4vw, calc(15.8vw - 9.8vh - 36px)), 200px)' : 'clamp(32px, min(10.4vw, 5.4vh), 48px)',
+      // Phones: two left-aligned lines (ENGINEERS / HORIZON) in the open sky above the rooftops
+      titleTop: desktop ? 'clamp(116px,17vh,180px)' : 'clamp(90px,12.5vh,130px)',
+      titleAlign: desktop ? 'center' : 'left', titlePad: desktop ? '0' : 'clamp(18px,3.5vw,56px)', titleMargin: desktop ? '0 auto' : '0',
+      titleWrap: desktop ? 'nowrap' : 'normal', titleMax: desktop ? 'none' : 'min-content', titleLH: desktop ? '.8' : '.94',
       desktop, mobile: !desktop, aboutCols: desktop ? 'repeat(4,minmax(0,1fr))' : 'repeat(2,minmax(0,1fr))', heroBottom: desktop ? 'clamp(32px,6vh,56px)' : '84px',
       tabs: [tab('ONGOING'), tab('COMPLETED')],
       projects: (s.tab === 'ONGOING' ? ongoing : completed).map(p => ({ ...p, live: s.tab === 'ONGOING', done: s.tab !== 'ONGOING', price: s.tab === 'ONGOING' ? 'PRICE ON REQUEST' : 'FAMILIES LIVING', hasLogo: !!p.logo, noLogo: !p.logo, tileBg: p.logo ? '#2B1F18' : '#E3CFB4', tileFg: p.logo ? '#CDBBA6' : '#3A2A20' })),
-      gallery, galIndex: String(s.gal + 1).padStart(2, '0'), galCaption: imgs[s.gal][1],
+      gallery, galIndex: String(s.gal + 1).padStart(2, '0'), galCounter: String(s.gal + 1).padStart(2, '0') + ' / ' + String(imgs.length).padStart(2, '0'), galCaption: (imgs[s.gal] || imgs[0])[1],
       prevG: () => this.setState(st => ({ gal: (st.gal + imgs.length - 1) % imgs.length })), nextG: () => this.setState(st => ({ gal: (st.gal + 1) % imgs.length })),
       mapLink: 'https://www.google.com/maps/search/?api=1&query=' + L.map, mapPlace: s.loc === 'bavdhan' ? 'Bavdhan, Pune' : 'Tathawade, Pune',
       why, whyMinH: desktop ? '220px' : '0',
