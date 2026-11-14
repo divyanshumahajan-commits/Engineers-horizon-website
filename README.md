@@ -30,7 +30,13 @@ Upload everything in this repository, as it is, to any static web hosting (Netli
 
 ## Enquiry forms and leads
 
-Every enquiry form saves the lead to **Supabase** (project *Engineers Horizon Website*, table `leads`). Each lead records the name, phone, email, project, budget, preferred visit date, contact preferences, the page it came from, and ad-campaign tags (`utm_source`, `utm_medium`, `utm_campaign`).
+All forms save to **Supabase** (project *Engineers Horizon Website*):
+
+- Enquiry forms → table `leads`
+- Channel partner registration (EH-Connect page, `PartnerForm.dc.html`) → table `channel_partners`
+- Refer a friend (EH-Privilege page, `ReferralForm.dc.html`) → table `referrals`
+
+Every enquiry form saves the lead to the `leads` table. Each lead records the name, phone, email, project, budget, preferred visit date, contact preferences, the page it came from, and ad-campaign tags (`utm_source`, `utm_medium`, `utm_campaign`).
 
 The Supabase key in `EnquiryForm.dc.html` is a **publishable** key and is meant to be public. Database security only lets website visitors *add* leads. Leads can't be read, changed or deleted from the website; the team views them in the Supabase dashboard (**Table Editor → leads**).
 

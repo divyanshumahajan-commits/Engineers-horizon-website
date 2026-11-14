@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./vendor/react.production.min.js"></script>
+<script src="./vendor/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="./eh-motion.js"></script>
+</helmet>
+<section id="register" style="background:#FBF5EC;padding:clamp(56px,8vw,120px) clamp(18px,3.5vw,56px);font-family:'Plus Jakarta Sans',sans-serif;color:#3A2A20;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,80px);align-items:start;">
+    <div data-reveal="rise" style="background:#3A2A20;color:#FBF5EC;padding:clamp(28px,3.4vw,52px);display:flex;flex-direction:column;gap:22px;">
+      <div style="display:flex;align-items:center;gap:10px;font-weight:600;font-size:11px;letter-spacing:.14em;color:#E3B48F;"><span style="width:9px;height:9px;border:1px solid #E3B48F;"></span>CHANNEL PARTNER REGISTRATION</div>
+      <h2 style="margin:0;font-weight:700;font-size:clamp(32px,3.8vw,54px);line-height:1;letter-spacing:-.025em;text-wrap:balance;">Register with the EH partner desk.</h2>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#CDBBA6;text-wrap:pretty;">Fill in your details once. Our partner desk will verify them and call you within two working days with your partner code and project kits.</p>
+      <ul style="list-style:none;margin:8px 0 0;padding:0;"><li style="display:flex;gap:12px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(251,245,236,.18);font-size:15px;line-height:1.5;color:#EFE4D4;"><span style="flex:0 0 auto;width:14px;height:1px;background:#E3B48F;transform:translateY(-4px);"></span>Written brokerage terms for every project</li><li style="display:flex;gap:12px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(251,245,236,.18);font-size:15px;line-height:1.5;color:#EFE4D4;"><span style="flex:0 0 auto;width:14px;height:1px;background:#E3B48F;transform:translateY(-4px);"></span>Payouts on agreed milestones, on time</li><li style="display:flex;gap:12px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(251,245,236,.18);font-size:15px;line-height:1.5;color:#EFE4D4;"><span style="flex:0 0 auto;width:14px;height:1px;background:#E3B48F;transform:translateY(-4px);"></span>One partner manager for site visits, inventory and paperwork</li><li style="display:flex;gap:12px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(251,245,236,.18);font-size:15px;line-height:1.5;color:#EFE4D4;"><span style="flex:0 0 auto;width:14px;height:1px;background:#E3B48F;transform:translateY(-4px);"></span>Brochures, floor plans, videos and creatives, ready to share</li></ul>
+      <a href="https://wa.me/918484050579" style="align-self:flex-start;color:#FBF5EC;font-weight:600;font-size:11px;letter-spacing:.14em;text-decoration:none;border-bottom:1px solid rgba(251,245,236,.5);padding:8px 0 4px;">QUESTIONS? WHATSAPP US →</a>
+    </div>
+    <div style="display:flex;flex-direction:column;">
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="border:1px solid rgba(58,42,32,.2);padding:36px;display:flex;flex-direction:column;gap:12px;">
+          <div style="font-weight:600;font-size:11px;letter-spacing:.14em;color:#A8643F;">RECEIVED</div>
+          <div style="font-size:26px;font-weight:700;letter-spacing:-.02em;">Thank you. Your registration is in.</div>
+          <p style="margin:0;color:#6B5546;line-height:1.6;">Our partner desk will call you within two working days. For anything urgent, WhatsApp +91 84840 50579.</p>
+          <button onClick="{{ reset }}" style="align-self:flex-start;margin-top:8px;font-weight:600;font-size:11px;letter-spacing:.14em;background:transparent;border:1px solid #3A2A20;color:#3A2A20;padding:0 18px;height:44px;cursor:pointer;">REGISTER ANOTHER PARTNER</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <form onSubmit="{{ submit }}" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:0 28px;">
+          <input name="company" tabIndex="-1" autoComplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;opacity:0;">
+          <label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">FIRM / AGENCY NAME *</span><input required type="text" name="firm" placeholder="Your firm name" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;width:100%;"></label><label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">YOUR NAME *</span><input required type="text" name="name" placeholder="Full name" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;width:100%;"></label><label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">MOBILE *</span><input required type="tel" name="phone" placeholder="+91" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;width:100%;"></label><label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">EMAIL</span><input type="email" name="email" placeholder="you@firm.com" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;width:100%;"></label><label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">MAHARERA AGENT NO.</span><input type="text" name="rera" placeholder="A5xxxxxxxxx" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;width:100%;"></label><label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">AREAS YOU WORK IN</span><input type="text" name="area" placeholder="e.g. Wakad, Hinjewadi" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;width:100%;"></label><label style="display:flex;flex-direction:column;gap:6px;padding:14px 0;border-bottom:1px solid rgba(58,42,32,.22);grid-column:1/-1;"><span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:10px;letter-spacing:.14em;color:#6B5546;">YEARS IN REAL ESTATE</span><select name="experience" style="border:0;background:transparent;font:500 17px 'Plus Jakarta Sans',sans-serif;color:#3A2A20;outline:none;padding:6px 0;min-height:40px;width:100%;"><option>Less than 2 years</option><option>2–5 years</option><option>5–10 years</option><option>More than 10 years</option></select></label>
+          <label style="grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;padding:20px 0 4px;cursor:pointer;">
+            <input required type="checkbox" name="consent" style="width:18px;height:18px;margin:2px 0 0;accent-color:#3A2A20;flex:0 0 auto;">
+            <span style="font-size:13px;line-height:1.55;color:#6B5546;">I agree to be contacted by Engineers Horizon about channel partner empanelment. My details are never shared.</span>
+          </label>
+          <div style="grid-column:1/-1;padding-top:18px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;">
+            <sc-if value="{{ failed }}" hint-placeholder-val="{{ false }}">
+              <p role="alert" style="flex-basis:100%;margin:0;padding:12px 14px;border:1px solid #A8643F;color:#7A3F1F;background:#F6E7DA;font-size:14px;line-height:1.5;">{{ errorText }}</p>
+            </sc-if>
+            <button type="submit" disabled="{{ sending }}" style="height:52px;display:flex;align-items:stretch;border:0;padding:0;cursor:pointer;opacity:{{ btnOpacity }};background:#3A2A20;color:#FBF5EC;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;" style-hover="background:#A8643F;">
+              <span style="display:flex;align-items:center;padding:0 24px;">{{ btnLabel }}</span>
+              <span style="display:flex;align-items:center;padding:0 16px;border-left:1px solid rgba(251,245,236,.3);">»</span>
+            </button>
+          </div>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1440px&quot;,&quot;height&quot;:&quot;900px&quot;}}">
+class Component extends DCLogic {
+  // Same Supabase project as the enquiry form. The publishable key is meant to be public:
+  // this table only lets website visitors ADD a row. Nothing can be read, changed or deleted from the website.
+  static SUPABASE_URL = 'https://xbcsbbqxjkkglcmrtlir.supabase.co';
+  static SUPABASE_KEY = 'sb_publishable_pVofwuWkANlxXU3L8mB90Q_GQOo1gAX';
+  state = { sent: false, sending: false, failed: false, errorText: '' };
+
+  async save(form) {
+    const f = new FormData(form);
+    if ((f.get('company') || '').toString().trim()) { this.setState({ sent: true }); return; } // spam bot
+    const v = (k, max) => { const s = (f.get(k) || '').toString().trim(); return s === '' ? null : s.slice(0, max); };
+    const ph = k => (v(k, 40) || '').replace(/[^0-9+() -]/g, '').slice(0, 20);
+    for (const k of ["phone"]) {
+      if (ph(k).replace(/\D/g, '').length < 10) { this.setState({ failed: true, errorText: 'Please check the mobile numbers. Each needs at least 10 digits.' }); return; }
+    }
+    let page = 'Home';
+    try { page = decodeURIComponent(location.pathname.split('/').pop() || 'Home').replace('.dc.html', '').replace('.html', '') || 'Home'; } catch (e) {}
+    const row = Object.assign({ firm_name: v('firm', 160), contact_name: v('name', 120), phone: ph('phone'), email: v('email', 200), rera_agent_no: v('rera', 40), area: v('area', 120), experience: v('experience', 40) }, { consent: true, source_page: page.slice(0, 200) });
+    this.setState({ sending: true, failed: false });
+    try {
+      const res = await fetch(Component.SUPABASE_URL + '/rest/v1/channel_partners', {
+        method: 'POST',
+        headers: { 'apikey': Component.SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+        body: JSON.stringify(row)
+      });
+      if (!res.ok) throw new Error('Save failed: ' + res.status);
+      this.setState({ sending: false, sent: true });
+    } catch (err) {
+      let preview = false;
+      try { preview = window.__omEditor === 1 || window.parent !== window; } catch (e) { preview = true; }
+      this.setState({ sending: false, failed: true, errorText: preview
+        ? 'This design preview blocks sending. The form works on the live website and on localhost.'
+        : "Sorry, we couldn't send this just now. Please check your internet and try again, or WhatsApp us on +91 84840 50579." });
+    }
+  }
+
+  renderVals() {
+    return {
+      sent: this.state.sent, notSent: !this.state.sent, sending: this.state.sending,
+      btnLabel: this.state.sending ? 'SENDING…' : 'REGISTER AS A PARTNER', btnOpacity: this.state.sending ? 0.7 : 1,
+      failed: this.state.failed, errorText: this.state.errorText,
+      submit: e => { e.preventDefault(); if (!this.state.sending) this.save(e.currentTarget || e.target); },
+      reset: () => this.setState({ sent: false, failed: false })
+    };
+  }
+}
+
+</script>
+</body>
+</html>
