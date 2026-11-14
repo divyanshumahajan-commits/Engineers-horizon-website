@@ -42,6 +42,6 @@ The Supabase key in `EnquiryForm.dc.html` is a **publishable** key and is meant 
 
 ## Before launch
 
-- Replace the placeholder content: event dates on the Events page, sample roles on the Careers page, and the EH-Privilege reward terms.
+- Replace the placeholder content: event dates on the Events page, and the EH-Privilege reward terms.
 - Add Privacy Policy and Terms pages (the footer links don't go anywhere yet).
 - Google Maps and the Plus Jakarta Sans font load once the site is online.
