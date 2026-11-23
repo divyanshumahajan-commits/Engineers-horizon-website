@@ -31,9 +31,10 @@ GOOD TO KNOW
   - The Google Maps show live once the site is on the internet.
   - The font (Plus Jakarta Sans) loads from Google Fonts, so it needs
     an internet connection.
-  - Enquiry forms save every lead to Supabase (project "Engineers
-    Horizon Website" > Table Editor > leads). This works once the site
-    is online or running on localhost with internet.
+  - All forms save to the Google Sheet "EH Website Leads" (one tab per
+    form), and every new entry is emailed to the team. This works once
+    the site is online or running on localhost with internet. The
+    sheet's script is in the google-apps-script folder.
 
 WHAT EACH FILE IS
   Home, About, Contact, IOS Prime, EH Towers, EH Sky Tower, Blog,

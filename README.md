@@ -30,15 +30,25 @@ Upload everything in this repository, as it is, to any static web hosting (Netli
 
 ## Enquiry forms and leads
 
-All forms save to **Supabase** (project *Engineers Horizon Website*):
+All forms save to the Google Sheet **[EH Website Leads](https://docs.google.com/spreadsheets/d/1PEfL3XawIEVv4eD_ibjHkYKBjAykVkKKubmo_5P48i8/edit)**, one tab per form:
 
-- Enquiry forms → table `leads`
-- Channel partner registration (EH-Connect page, `PartnerForm.dc.html`) → table `channel_partners`
-- Refer a friend (EH-Privilege page, `ReferralForm.dc.html`) → table `referrals`
+- Book a site visit (`EnquiryForm.dc.html`) → first tab
+- Channel partner registration (EH-Connect page, `PartnerForm.dc.html`) → **Channel Partners** tab
+- Refer a friend (EH-Privilege page, `ReferralForm.dc.html`) → **Referrals** tab
 
-Every enquiry form saves the lead to the `leads` table. Each lead records the name, phone, email, project, budget, preferred visit date, contact preferences, the page it came from, and ad-campaign tags (`utm_source`, `utm_medium`, `utm_campaign`).
+Each site-visit lead records the name, phone, email, project, budget, preferred visit date, contact preferences, the page it came from, and ad-campaign tags (`utm_source`, `utm_medium`, `utm_campaign`).
 
-The Supabase key in `EnquiryForm.dc.html` is a **publishable** key and is meant to be public. Database security only lets website visitors *add* leads. Leads can't be read, changed or deleted from the website; the team views them in the Supabase dashboard (**Table Editor → leads**).
+Every new entry is also emailed to vinit.kavade@, divyanshu.mahajan@ and media@engineershorizon.com.
+
+### How it's connected
+
+The forms send each entry to a Google Apps Script web app attached to the sheet (the `SHEET_URL` line near the top of each form's script). The script's code is kept in [`google-apps-script/eh-leads-sheet-script.gs`](google-apps-script/eh-leads-sheet-script.gs).
+
+To change who gets the email alerts, or anything else in the script:
+
+1. Open the sheet → **Extensions → Apps Script**, paste in the updated code and click **Save**.
+2. **Deploy → Manage deployments → pencil icon → Version: New version → Deploy.** The web-app link stays the same, so the website doesn't need changing.
+3. Copy the same change into `google-apps-script/eh-leads-sheet-script.gs` here, so the repo stays in step.
 
 ## Before launch
 
