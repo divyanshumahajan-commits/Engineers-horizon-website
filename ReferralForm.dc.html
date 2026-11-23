@@ -56,10 +56,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1440px&quot;,&quot;height&quot;:&quot;900px&quot;}}">
 class Component extends DCLogic {
-  // Same Supabase project as the enquiry form. The publishable key is meant to be public:
-  // this table only lets website visitors ADD a row. Nothing can be read, changed or deleted from the website.
-  static SUPABASE_URL = 'https://xbcsbbqxjkkglcmrtlir.supabase.co';
-  static SUPABASE_KEY = 'sb_publishable_pVofwuWkANlxXU3L8mB90Q_GQOo1gAX';
+  // Registrations go to the "Referrals" tab.
+  // Saved to the Google Sheet "EH Website Leads" through its Apps Script web app.
+  static SHEET_URL = 'https://script.google.com/macros/s/AKfycbxJ5_3K8rL-_ay1OtEKpkZndk4IjIkXLHTUtXNbrNqsptHrzoz3PA6Cr6bw_QL9ouHo/exec';
   state = { sent: false, sending: false, failed: false, errorText: '' };
 
   async save(form) {
@@ -72,15 +71,12 @@ class Component extends DCLogic {
     }
     let page = 'Home';
     try { page = decodeURIComponent(location.pathname.split('/').pop() || 'Home').replace('.dc.html', '').replace('.html', '') || 'Home'; } catch (e) {}
-    const row = Object.assign({ referrer_name: v('rname', 120), referrer_phone: ph('rphone'), referrer_project: v('rproject', 120), referrer_flat: v('rflat', 40), friend_name: v('fname', 120), friend_phone: ph('fphone'), friend_project: v('fproject', 120) }, { consent: true, source_page: page.slice(0, 200) });
+    const row = Object.assign({ referrer_name: v('rname', 120), referrer_phone: ph('rphone'), referrer_project: v('rproject', 120), referrer_flat: v('rflat', 40), friend_name: v('fname', 120), friend_phone: ph('fphone'), friend_project: v('fproject', 120) }, { source_page: page.slice(0, 200) });
     this.setState({ sending: true, failed: false });
     try {
-      const res = await fetch(Component.SUPABASE_URL + '/rest/v1/referrals', {
-        method: 'POST',
-        headers: { 'apikey': Component.SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
-        body: JSON.stringify(row)
-      });
-      if (!res.ok) throw new Error('Save failed: ' + res.status);
+      // Google Apps Script doesn't let another website read its reply, so this goes "no-cors" as plain text:
+      // the row still lands in the sheet; a network failure still shows the error message below.
+      await fetch(Component.SHEET_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ form: 'referral', ...row }) });
       this.setState({ sending: false, sent: true });
     } catch (err) {
       let preview = false;
