@@ -1,0 +1,13 @@
+---
+# Tells cPanel how to put the website live.
+# When you click "Deploy HEAD Commit" in cPanel > Git Version Control,
+# these files are copied into public_html (the live engineershorizon.com).
+# Local preview starters, READMEs and the Google Apps Script are left out.
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home4/engineershorizon/public_html/
+    - /bin/cp -f index.html "$DEPLOYPATH"
+    - /bin/cp -f *.dc.html "$DEPLOYPATH"
+    - /bin/cp -f *.js "$DEPLOYPATH"
+    - /bin/cp -Rf assets "$DEPLOYPATH"
+    - /bin/cp -Rf vendor "$DEPLOYPATH"
