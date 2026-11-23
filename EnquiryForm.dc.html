@@ -104,6 +104,9 @@ class Component extends DCLogic {
   // the leads table only lets website visitors ADD a lead. Leads can't be read, changed or deleted from the website.
   static SUPABASE_URL = 'https://xbcsbbqxjkkglcmrtlir.supabase.co';
   static SUPABASE_KEY = 'sb_publishable_pVofwuWkANlxXU3L8mB90Q_GQOo1gAX';
+  // Google Sheet "EH Website Leads": paste the Apps Script web-app link (ends in /exec) between the quotes.
+  // Every enquiry is saved to BOTH Supabase and the sheet. If either one saves it, the visitor sees "Request received".
+  static SHEET_URL = 'https://script.google.com/macros/s/AKfycbxJ5_3K8rL-_ay1OtEKpkZndk4IjIkXLHTUtXNbrNqsptHrzoz3PA6Cr6bw_QL9ouHo/exec';
 
   state = { sent: false, sending: false, failed: false, errorText: '', name: '', ch: { CALL: true, WHATSAPP: true, SMS: false, EMAIL: false } };
 
@@ -148,13 +151,21 @@ class Component extends DCLogic {
       ...this.utm()
     };
     this.setState({ sending: true, failed: false });
+    const toSupabase = fetch(Component.SUPABASE_URL + '/rest/v1/leads', {
+      method: 'POST',
+      headers: { 'apikey': Component.SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+      body: JSON.stringify(lead)
+    }).then(res => { if (!res.ok) throw new Error('Supabase save failed: ' + res.status); });
+    // Google Apps Script doesn't allow reading its reply from another website, so this is sent "no-cors" as plain text:
+    // the row still lands in the sheet; we only know the request went out.
+    const toSheet = Component.SHEET_URL
+      ? fetch(Component.SHEET_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(lead) })
+      : Promise.reject(new Error('Sheet link not set'));
     try {
-      const res = await fetch(Component.SUPABASE_URL + '/rest/v1/leads', {
-        method: 'POST',
-        headers: { 'apikey': Component.SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
-        body: JSON.stringify(lead)
-      });
-      if (!res.ok) throw new Error('Save failed: ' + res.status);
+      const results = await Promise.allSettled([toSupabase, toSheet]);
+      results.forEach(r => { if (r.status === 'rejected') console.warn('[EH enquiry]', r.reason); });
+      const firstErr = results.find(r => r.status === 'rejected');
+      if (results.every(r => r.status === 'rejected')) throw (firstErr.reason instanceof TypeError ? firstErr.reason : results[0].reason);
       this.setState({ sending: false, sent: true });
     } catch (err) {
       // Inside the Claude design preview the page runs in a locked-down frame that blocks outside connections,
@@ -163,7 +174,7 @@ class Component extends DCLogic {
       try { inPreview = window.__omEditor === 1 || window.parent !== window; } catch (e) { inPreview = true; }
       const blocked = err instanceof TypeError;
       this.setState({ sending: false, failed: true, errorText: inPreview && blocked
-        ? 'Design preview only: this preview blocks connections to outside services, so this test enquiry was not sent. On the live website (Netlify or your localhost) enquiries are saved to Supabase.'
+        ? 'Design preview only: this preview blocks connections to outside services, so this test enquiry was not sent. On the live website (Netlify or your localhost) enquiries are saved to Supabase and the Google Sheet.'
         : "Sorry, we couldn't send your details just now. Please check your internet and try again, or WhatsApp us on +91 84840 50579." });
     }
   }
